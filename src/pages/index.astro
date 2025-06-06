@@ -1,40 +1,45 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// Importar las imágenes correctamente
+import heroImage from '../assets/hero.jpeg';
+import nosotrosImage from '../assets/nosotros.jpeg';
+import sectionImage from '../assets/section.jpeg';
+
 const services = [
   {
     title: 'Asesoría Tributaria',
     description: 'Declaraciones de impuesto a la renta, IVA y retenciones. Cumplimiento tributario garantizado.',
     icon: 'fas fa-file-invoice-dollar',
-    image: '/src/assets/hero.jpeg',
+    image: heroImage,
     items: ['Declaraciones IR', 'Declaraciones IVA', 'Retenciones', 'Consultoría fiscal']
   },
   {
     title: 'Gestión Laboral',
     description: 'Roles de pago, avisos IESS y gestión completa de recursos humanos.',
     icon: 'fas fa-users',
-    image: '/src/assets/section.jpeg',
+    image: sectionImage,
     items: ['Roles de pago', 'Avisos IESS', 'Préstamos', 'Nómina completa']
   },
   {
     title: 'Servicios Societarios',
     description: 'Constitución de empresas, cambios societarios y trámites corporativos.',
     icon: 'fas fa-building',
-    image: '/src/assets/nosotros.jpeg',
+    image: nosotrosImage,
     items: ['Constitución empresas', 'Cambios de socios', 'Aumentos capital', 'Trámites SRI']
   },
   {
     title: 'Estados Financieros',
     description: 'Elaboración de estados financieros bajo NIIF y análisis empresarial.',
     icon: 'fas fa-chart-line',
-    image: '/src/assets/hero.jpeg',
+    image: heroImage,
     items: ['Estados NIIF', 'Balance General', 'P&G', 'Análisis financiero']
   },
   {
     title: 'Software Contable',
     description: 'Implementación y manejo de sistemas contables modernos y eficientes.',
     icon: 'fas fa-laptop-code',
-    image: '/src/assets/section.jpeg',
+    image: sectionImage,
     items: ['Implementación', 'Capacitación', 'Soporte técnico', 'Optimización']
   }
 ];
@@ -68,495 +73,502 @@ const plans = [
 ---
 
 <BaseLayout
-  title="Eugenia Guerrero CPA | Mejores Servicios Contables en Cuenca Ecuador"
-  description="Servicios contables profesionales en Cuenca Ecuador. Asesoría tributaria, estados financieros, trámites SRI. +15 años de experiencia. ¡Consulta gratuita!"
+    title="Eugenia Guerrero CPA | Mejores Servicios Contables en Cuenca Ecuador"
+    description="Servicios contables profesionales en Cuenca Ecuador. Asesoría tributaria, estados financieros, trámites SRI. +15 años de experiencia. ¡Consulta gratuita!"
 >
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800"></div>
-  <div class="absolute inset-0 bg-black opacity-20"></div>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800"></div>
+    <div class="absolute inset-0 bg-black opacity-20"></div>
 
-  <!-- Floating Elements -->
-  <div class="absolute top-20 left-10 w-20 h-20 bg-accent-400 rounded-full opacity-20 animate-float"></div>
-  <div class="absolute bottom-32 right-16 w-32 h-32 bg-white rounded-full opacity-10 animate-float" style="animation-delay: 2s;"></div>
-  <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-accent-500 rounded-full opacity-15 animate-float" style="animation-delay: 4s;"></div>
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-accent-400 rounded-full opacity-20 animate-float"></div>
+    <div class="absolute bottom-32 right-16 w-32 h-32 bg-white rounded-full opacity-10 animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-accent-500 rounded-full opacity-15 animate-float" style="animation-delay: 4s;"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <!-- Left Content -->
-      <div class="text-left lg:text-left space-y-8 animate-slide-up">
-        <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-          <i class="fas fa-certificate mr-2"></i>
-          Contadora Pública Autorizada en Cuenca
-        </div>
-
-        <h1 class="text-5xl lg:text-7xl font-bold text-white leading-tight">
-          Mejores servicios
-          <span class="gradient-text block">contables</span>
-          en Cuenca
-        </h1>
-
-        <p class="text-xl text-blue-100 max-w-2xl">
-          Asesoría contable profesional con más de 15 años de experiencia.
-          Trámites SRI, estados financieros y consultoría empresarial en Ecuador.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contacto" class="inline-flex items-center justify-center px-8 py-4 bg-accent-500 text-white font-semibold rounded-2xl hover:bg-accent-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-            <i class="fas fa-calendar-check mr-3"></i>
-            Asesoría Gratuita
-          </a>
-          <a href="#servicios" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-primary-600 transition-all duration-300">
-            Ver Servicios
-            <i class="fas fa-arrow-right ml-3"></i>
-          </a>
-        </div>
-
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white border-opacity-20">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-white">15+</div>
-            <div class="text-sm text-blue-200">Años en Cuenca</div>
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="text-left lg:text-left space-y-8 animate-slide-up">
+          <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+            <i class="fas fa-certificate mr-2"></i>
+            Contadora Pública Autorizada en Cuenca
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-white">500+</div>
-            <div class="text-sm text-blue-200">Trámites SRI</div>
+
+          <h1 class="text-5xl lg:text-7xl font-bold text-white leading-tight">
+            Mejores servicios
+            <span class="gradient-text block">contables</span>
+            en Cuenca
+          </h1>
+
+          <p class="text-xl text-blue-100 max-w-2xl">
+            Asesoría contable profesional con más de 15 años de experiencia.
+            Trámites SRI, estados financieros y consultoría empresarial en Ecuador.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contacto" class="inline-flex items-center justify-center px-8 py-4 bg-accent-500 text-white font-semibold rounded-2xl hover:bg-accent-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+              <i class="fas fa-calendar-check mr-3"></i>
+              Asesoría Gratuita
+            </a>
+            <a href="#servicios" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-primary-600 transition-all duration-300">
+              Ver Servicios
+              <i class="fas fa-arrow-right ml-3"></i>
+            </a>
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-white">24/7</div>
-            <div class="text-sm text-blue-200">Asesoría disponible</div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white border-opacity-20">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white">15+</div>
+              <div class="text-sm text-blue-200">Años en Cuenca</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white">500+</div>
+              <div class="text-sm text-blue-200">Trámites SRI</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white">24/7</div>
+              <div class="text-sm text-blue-200">Asesoría disponible</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Right Content - Image -->
-      <div class="relative animate-fade-in" style="animation-delay: 0.5s;">
-        <div class="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-          <img src="/src/assets/hero.jpeg" alt="Eugenia Guerrero - Mejor Contadora en Cuenca Ecuador" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-900 opacity-30"></div>
-        </div>
+        <!-- Right Content - Image -->
+        <div class="relative animate-fade-in" style="animation-delay: 0.5s;">
+          <div class="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+            <img src={heroImage.src} alt="Eugenia Guerrero - Mejor Contadora en Cuenca Ecuador" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-900 opacity-30"></div>
+          </div>
 
-        <!-- Floating Badge -->
-        <div class="absolute -top-6 -right-6 bg-accent-500 rounded-2xl p-4 shadow-xl animate-float">
-          <i class="fas fa-chart-line text-white text-2xl"></i>
-        </div>
+          <!-- Floating Badge -->
+          <div class="absolute -top-6 -right-6 bg-accent-500 rounded-2xl p-4 shadow-xl animate-float">
+            <i class="fas fa-chart-line text-white text-2xl"></i>
+          </div>
 
-        <!-- SRI Badge -->
-        <div class="absolute top-6 left-6 bg-blue-900 rounded-xl p-3 shadow-lg">
-          <img src="https://srienlinea.sri.gob.ec/sri-en-linea/assets/recursos-sri-en-linea/imagenes/logo/sri-en-linea.svg" alt="SRI Ecuador" class="h-8 filter brightness-0 invert">
+          <!-- SRI Badge -->
+          <div class="absolute top-6 left-6 bg-blue-900 rounded-xl p-3 shadow-lg">
+            <img src="https://srienlinea.sri.gob.ec/sri-en-linea/assets/recursos-sri-en-linea/imagenes/logo/sri-en-linea.svg" alt="SRI Ecuador" class="h-8 filter brightness-0 invert">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- About Section -->
-<section id="sobre-nosotros" class="py-20 lg:py-32 bg-white observe">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Left Content - Image -->
-      <div class="relative">
-        <div class="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
-          <img src="/src/assets/nosotros.jpeg" alt="Eugenia Guerrero CPA - Oficina Contable Cuenca" class="w-full h-full object-cover">
+  <!-- About Section -->
+  <section id="sobre-nosotros" class="py-20 lg:py-32 bg-white observe">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Content - Image -->
+        <div class="relative">
+          <div class="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
+            <img src={nosotrosImage.src} alt="Eugenia Guerrero CPA - Oficina Contable Cuenca" class="w-full h-full object-cover">
+          </div>
+          <!-- Decorative elements -->
+          <div class="absolute -top-4 -right-4 w-32 h-32 border-4 border-primary-200 rounded-3xl -z-10"></div>
+          <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-accent-400 rounded-2xl -z-10"></div>
         </div>
-        <!-- Decorative elements -->
-        <div class="absolute -top-4 -right-4 w-32 h-32 border-4 border-primary-200 rounded-3xl -z-10"></div>
-        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-accent-400 rounded-2xl -z-10"></div>
+
+        <!-- Right content -->
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">
+              <i class="fas fa-star mr-2"></i>
+              Sobre Nosotros
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
+              Eugenia Guerrero
+              <span class="text-primary-600">CPA</span>
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Contadora Pública con más de 15 años de experiencia en Cuenca Ecuador.
+              Especializada en asesoría contable, trámites SRI, manejo de software contable
+              y consultoría empresarial para empresas de todos los tamaños.
+            </p>
+          </div>
+
+          <!-- Mission & Vision -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-primary-50 p-6 rounded-2xl card-hover">
+              <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center mb-4">
+                <i class="fas fa-bullseye text-white"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Nuestra Misión</h3>
+              <p class="text-gray-600">Brindar la mejor asesoría contable en Cuenca, democratizando el acceso a servicios contables de calidad.</p>
+            </div>
+            <div class="bg-accent-50 p-6 rounded-2xl card-hover">
+              <div class="w-12 h-12 bg-accent-600 rounded-xl flex items-center justify-center mb-4">
+                <i class="fas fa-eye text-white"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Nuestra Visión</h3>
+              <p class="text-gray-600">Ser la referencia en servicios contables en Cuenca y el Azuay, facilitando el crecimiento empresarial.</p>
+            </div>
+          </div>
+
+
+          <!-- Certifications -->
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm">
+              <i class="fas fa-certificate text-primary-600 mr-2"></i>
+              <span class="text-sm font-medium text-gray-700">CPA Certificada Ecuador</span>
+            </div>
+            <div class="flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm">
+              <i class="fas fa-graduation-cap text-primary-600 mr-2"></i>
+              <span class="text-sm font-medium text-gray-700">Especialista NIIF</span>
+            </div>
+            <div class="flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm">
+              <img src="https://srienlinea.sri.gob.ec/sri-en-linea/assets/recursos-sri-en-linea/imagenes/logo/sri-en-linea.svg" alt="SRI" class="w-4 h-4 mr-2 filter brightness-0">
+              <span class="text-sm font-medium text-gray-700">Autorizada SRI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="servicios" class="py-20 lg:py-32 bg-gray-50 observe">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+          <i class="fas fa-briefcase mr-2"></i>
+          Servicios Contables en Cuenca
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Asesoría <span class="gradient-text">contable</span> integral
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Servicios especializados para cubrir todas tus necesidades contables y tributarias en Ecuador
+        </p>
       </div>
 
-      <!-- Right content -->
-      <div class="space-y-8">
-        <div class="space-y-4">
-          <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">
-            <i class="fas fa-star mr-2"></i>
-            Sobre Nosotros
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {services.map((service, index) => (
+            <div class="group bg-white rounded-3xl p-6 shadow-lg card-hover border border-gray-100 animate-scale-in" style={`animation-delay: ${index * 0.1}s`}>
+              <!-- Icon -->
+              <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class={`${service.icon} text-white text-xl`}></i>
+              </div>
+
+              <!-- Content -->
+              <h3 class="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">{service.title}</h3>
+              <p class="text-gray-600 mb-4 text-sm leading-relaxed">{service.description}</p>
+
+              <!-- Services List -->
+              <div class="space-y-2 mb-6">
+                {service.items.map(item => (
+                    <div class="flex items-center text-xs text-gray-600">
+                      <div class="w-1.5 h-1.5 bg-primary-400 rounded-full mr-2"></div>
+                      {item}
+                    </div>
+                ))}
+              </div>
+
+              <!-- CTA -->
+              <a href="/servicios" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group text-sm">
+                Ver detalles
+                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-xs"></i>
+              </a>
+            </div>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <div class="text-center mt-12">
+        <a href="/servicios" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+          Ver todas las asesorías
+          <i class="fas fa-arrow-right ml-3"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delegation Section -->
+  <section class="py-20 bg-gradient-to-br from-accent-50 to-primary-50 observe">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left content -->
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">
+              <i class="fas fa-user-check mr-2"></i>
+              Delega y Enfócate
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
+              Deja que <span class="gradient-text">Eugenia</span> se encargue
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Mientras tú te enfocas en hacer crecer tu negocio, Eugenia Guerrero
+              se encarga de toda tu contabilidad, trámites SRI y asesoría fiscal.
+              Manejo profesional de software contable y gestión tributaria completa.
+            </p>
           </div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
-            Eugenia Guerrero
-            <span class="text-primary-600">CPA</span>
-          </h2>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Contadora Pública con más de 15 años de experiencia en Cuenca Ecuador.
-            Especializada en asesoría contable, trámites SRI, manejo de software contable
-            y consultoría empresarial para empresas de todos los tamaños.
-          </p>
+
+          <!-- Benefits -->
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4 group">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-clock text-green-600"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Ahorra Tiempo</h3>
+                <p class="text-gray-600 text-sm">Enfócate en tu negocio principal mientras nosotros manejamos tu contabilidad</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4 group">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-shield-alt text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Cumplimiento Garantizado</h3>
+                <p class="text-gray-600 text-sm">Sin multas ni problemas con el SRI. Cumplimiento al 100%</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4 group">
+              <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-chart-line text-purple-600"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Decisiones Informadas</h3>
+                <p class="text-gray-600 text-sm">Reportes financieros claros y oportunos para mejores decisiones</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contacto" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-lg hover:scale-105">
+            <i class="fas fa-handshake mr-3"></i>
+            Delegar mi contabilidad
+          </a>
         </div>
 
-        <!-- Mission & Vision -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-primary-50 p-6 rounded-2xl card-hover">
-            <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center mb-4">
-              <i class="fas fa-bullseye text-white"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Nuestra Misión</h3>
-            <p class="text-gray-600">Brindar la mejor asesoría contable en Cuenca, democratizando el acceso a servicios contables de calidad.</p>
+        <!-- Right content - Image -->
+        <div class="relative">
+          <div class="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
+            <img src={sectionImage.src} alt="Empresario delegando contabilidad - Cuenca Ecuador" class="w-full h-full object-cover">
           </div>
-          <div class="bg-accent-50 p-6 rounded-2xl card-hover">
-            <div class="w-12 h-12 bg-accent-600 rounded-xl flex items-center justify-center mb-4">
-              <i class="fas fa-eye text-white"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Nuestra Visión</h3>
-            <p class="text-gray-600">Ser la referencia en servicios contables en Cuenca y el Azuay, facilitando el crecimiento empresarial.</p>
+          <!-- Floating elements -->
+          <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary-600 rounded-2xl flex items-center justify-center shadow-lg rotate-12 animate-float">
+            <i class="fas fa-laptop text-white text-2xl"></i>
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-accent-400 rounded-xl flex items-center justify-center shadow-lg -rotate-12 animate-float" style="animation-delay: 2s;">
+            <i class="fas fa-business-time text-white text-xl"></i>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Plans Section -->
+  <section id="planes" class="py-20 lg:py-32 bg-white observe">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium mb-4">
+          <i class="fas fa-tags mr-2"></i>
+          Planes de Asesoría Contable
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Elige tu <span class="gradient-text">plan ideal</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Planes flexibles de asesoría contable diseñados para empresas en Cuenca Ecuador
+        </p>
+      </div>
 
-        <!-- Certifications -->
-               <div class="flex flex-wrap gap-4">
-                 <div class="flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm">
-                   <i class="fas fa-certificate text-primary-600 mr-2"></i>
-                   <span class="text-sm font-medium text-gray-700">CPA Certificada Ecuador</span>
-                 </div>
-                 <div class="flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm">
-                   <i class="fas fa-graduation-cap text-primary-600 mr-2"></i>
-                   <span class="text-sm font-medium text-gray-700">Especialista NIIF</span>
-                 </div>
-                 <div class="flex items-center px-4 py-2 bg-white border border-gray-200 rounded-xl shadow-sm">
-                   <img src="https://srienlinea.sri.gob.ec/sri-en-linea/assets/recursos-sri-en-linea/imagenes/logo/sri-en-linea.svg" alt="SRI" class="w-4 h-4 mr-2 filter brightness-0">
-                   <span class="text-sm font-medium text-gray-700">Autorizada SRI</span>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-        </section>
+      <!-- Plans Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {plans.map((plan, index) => (
+            <div class={`relative bg-white rounded-3xl p-8 shadow-lg card-hover transition-all duration-300 animate-scale-in ${plan.popular ? 'border-2 border-accent-400 ring-4 ring-accent-100 scale-105' : 'border border-gray-200'}`} style={`animation-delay: ${index * 0.2}s`}>
+              {plan.popular && (
+                  <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div class="bg-gradient-to-r from-accent-400 to-accent-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      Más Popular en Cuenca
+                    </div>
+                  </div>
+              )}
 
-        <!-- Services Section -->
-        <section id="servicios" class="py-20 lg:py-32 bg-gray-50 observe">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <!-- Header -->
-           <div class="text-center mb-16">
-             <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
-               <i class="fas fa-briefcase mr-2"></i>
-               Servicios Contables en Cuenca
-             </div>
-             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-               Asesoría <span class="gradient-text">contable</span> integral
-             </h2>
-             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-               Servicios especializados para cubrir todas tus necesidades contables y tributarias en Ecuador
-             </p>
-           </div>
+              <!-- Plan Header -->
+              <div class="text-center mb-8">
+                <div class={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${plan.popular ? 'bg-gradient-to-br from-accent-400 to-accent-500' : 'bg-gradient-to-br from-primary-500 to-primary-600'}`}>
+                  <i class="fas fa-award text-white text-2xl"></i>
+                </div>
 
-           <!-- Services Grid -->
-           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-             {services.map((service, index) => (
-               <div class="group bg-white rounded-3xl p-6 shadow-lg card-hover border border-gray-100 animate-scale-in" style={`animation-delay: ${index * 0.1}s`}>
-                 <!-- Icon -->
-                 <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                   <i class={`${service.icon} text-white text-xl`}></i>
-                 </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <p class="text-gray-600 mb-4">{plan.description}</p>
 
-                 <!-- Content -->
-                 <h3 class="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">{service.title}</h3>
-                 <p class="text-gray-600 mb-4 text-sm leading-relaxed">{service.description}</p>
+                <div class="mb-4">
+                  <span class="text-4xl font-bold text-gray-900">${plan.price}</span>
+                  <span class="text-gray-600">/ {plan.period}</span>
+                </div>
+              </div>
 
-                 <!-- Services List -->
-                 <div class="space-y-2 mb-6">
-                   {service.items.map(item => (
-                     <div class="flex items-center text-xs text-gray-600">
-                       <div class="w-1.5 h-1.5 bg-primary-400 rounded-full mr-2"></div>
-                       {item}
-                     </div>
-                   ))}
-                 </div>
+              <!-- Features -->
+              <div class="space-y-4 mb-8">
+                {plan.features.map(feature => (
+                    <div class="flex items-center">
+                      <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-check text-green-600 text-xs"></i>
+                      </div>
+                      <span class="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                ))}
+              </div>
 
-                 <!-- CTA -->
-                 <a href="/servicios" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group text-sm">
-                   Ver detalles
-                   <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-xs"></i>
-                 </a>
-               </div>
-             ))}
-           </div>
+              <!-- CTA Button -->
+              <a href="/contacto" class={`block w-full text-center py-4 font-semibold rounded-2xl transition-all duration-300 ${plan.popular ? 'bg-accent-600 hover:bg-accent-700 text-white' : 'bg-primary-600 hover:bg-primary-700 text-white'}`}>
+                Elegir Plan
+              </a>
+            </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-           <!-- CTA Button -->
-           <div class="text-center mt-12">
-             <a href="/servicios" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-               Ver todas las asesorías
-               <i class="fas fa-arrow-right ml-3"></i>
-             </a>
-           </div>
-         </div>
-        </section>
+  <!-- Contact Section -->
+  <section id="contacto" class="py-20 lg:py-32 bg-gradient-to-br from-primary-600 to-primary-800 text-white relative overflow-hidden observe">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-float"></div>
+      <div class="absolute bottom-20 right-20 w-48 h-48 border border-white/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/10 rounded-full animate-float" style="animation-delay: 1s;"></div>
+    </div>
 
-        <!-- Delegation Section -->
-        <section class="py-20 bg-gradient-to-br from-accent-50 to-primary-50 observe">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-             <!-- Left content -->
-             <div class="space-y-8">
-               <div class="space-y-4">
-                 <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">
-                   <i class="fas fa-user-check mr-2"></i>
-                   Delega y Enfócate
-                 </div>
-                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
-                   Deja que <span class="gradient-text">Eugenia</span> se encargue
-                 </h2>
-                 <p class="text-lg text-gray-600 leading-relaxed">
-                   Mientras tú te enfocas en hacer crecer tu negocio, Eugenia Guerrero
-                   se encarga de toda tu contabilidad, trámites SRI y asesoría fiscal.
-                   Manejo profesional de software contable y gestión tributaria completa.
-                 </p>
-               </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium mb-4">
+          <i class="fas fa-envelope mr-2"></i>
+          Contáctanos
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+          ¿Listo para la mejor <span class="text-accent-400">asesoría contable</span>?
+        </h2>
+        <p class="text-xl text-primary-100 max-w-3xl mx-auto">
+          Contáctanos para asesoría contable profesional en Cuenca Ecuador.
+          Primera consulta gratuita para evaluar tus necesidades.
+        </p>
+      </div>
 
-               <!-- Benefits -->
-               <div class="space-y-6">
-                 <div class="flex items-start space-x-4 group">
-                   <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                     <i class="fas fa-clock text-green-600"></i>
-                   </div>
-                   <div>
-                     <h3 class="font-semibold text-gray-900 mb-1">Ahorra Tiempo</h3>
-                     <p class="text-gray-600 text-sm">Enfócate en tu negocio principal mientras nosotros manejamos tu contabilidad</p>
-                   </div>
-                 </div>
-                 <div class="flex items-start space-x-4 group">
-                   <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                     <i class="fas fa-shield-alt text-blue-600"></i>
-                   </div>
-                   <div>
-                     <h3 class="font-semibold text-gray-900 mb-1">Cumplimiento Garantizado</h3>
-                     <p class="text-gray-600 text-sm">Sin multas ni problemas con el SRI. Cumplimiento al 100%</p>
-                   </div>
-                 </div>
-                 <div class="flex items-start space-x-4 group">
-                   <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                     <i class="fas fa-chart-line text-purple-600"></i>
-                   </div>
-                   <div>
-                     <h3 class="font-semibold text-gray-900 mb-1">Decisiones Informadas</h3>
-                     <p class="text-gray-600 text-sm">Reportes financieros claros y oportunos para mejores decisiones</p>
-                   </div>
-                 </div>
-               </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="glass rounded-3xl p-8">
+          <h3 class="text-2xl font-bold mb-6">Solicita tu asesoría gratuita</h3>
+          <form class="space-y-6" onsubmit="handleSubmit(event)">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Nombre completo</label>
+              <input type="text" id="name" name="name" required
+                     class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Correo electrónico</label>
+              <input type="email" id="email" name="email" required
+                     class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">¿En qué podemos asesorarte?</label>
+              <textarea id="message" name="message" rows="4" required
+                        placeholder="Describe tu necesidad de asesoría contable..."
+                        class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300 resize-none"></textarea>
+            </div>
+            <button type="submit"
+                    class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 shadow-lg hover:shadow-xl">
+              <i class="fas fa-paper-plane mr-3"></i>
+              Solicitar Asesoría
+            </button>
+          </form>
+        </div>
 
-               <a href="#contacto" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-lg hover:scale-105">
-                 <i class="fas fa-handshake mr-3"></i>
-                 Delegar mi contabilidad
-               </a>
-             </div>
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-envelope text-accent-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Email</h4>
+                  <p class="text-primary-100">eugecsg@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fab fa-whatsapp text-accent-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">WhatsApp</h4>
+                  <p class="text-primary-100">+593 98 791 9930</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-map-marker-alt text-accent-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Ubicación</h4>
+                  <p class="text-primary-100">Cuenca, Azuay, Ecuador</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-clock text-accent-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Horario de Asesoría</h4>
+                  <p class="text-primary-100">Lun - Vie: 8:00 AM - 6:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-             <!-- Right content - Image -->
-             <div class="relative">
-               <div class="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
-                 <img src="/src/assets/section.jpeg" alt="Empresario delegando contabilidad - Cuenca Ecuador" class="w-full h-full object-cover">
-               </div>
-               <!-- Floating elements -->
-               <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary-600 rounded-2xl flex items-center justify-center shadow-lg rotate-12 animate-float">
-                 <i class="fas fa-laptop text-white text-2xl"></i>
-               </div>
-               <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-accent-400 rounded-xl flex items-center justify-center shadow-lg -rotate-12 animate-float" style="animation-delay: 2s;">
-                 <i class="fas fa-business-time text-white text-xl"></i>
-               </div>
-             </div>
-           </div>
-         </div>
-        </section>
-
-        <!-- Plans Section -->
-        <section id="planes" class="py-20 lg:py-32 bg-white observe">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <!-- Header -->
-           <div class="text-center mb-16">
-             <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-medium mb-4">
-               <i class="fas fa-tags mr-2"></i>
-               Planes de Asesoría Contable
-             </div>
-             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-               Elige tu <span class="gradient-text">plan ideal</span>
-             </h2>
-             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-               Planes flexibles de asesoría contable diseñados para empresas en Cuenca Ecuador
-             </p>
-           </div>
-
-           <!-- Plans Grid -->
-           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-             {plans.map((plan, index) => (
-               <div class={`relative bg-white rounded-3xl p-8 shadow-lg card-hover transition-all duration-300 animate-scale-in ${plan.popular ? 'border-2 border-accent-400 ring-4 ring-accent-100 scale-105' : 'border border-gray-200'}`} style={`animation-delay: ${index * 0.2}s`}>
-                 {plan.popular && (
-                   <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                     <div class="bg-gradient-to-r from-accent-400 to-accent-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                       Más Popular en Cuenca
-                     </div>
-                   </div>
-                 )}
-
-                 <!-- Plan Header -->
-                 <div class="text-center mb-8">
-                   <div class={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${plan.popular ? 'bg-gradient-to-br from-accent-400 to-accent-500' : 'bg-gradient-to-br from-primary-500 to-primary-600'}`}>
-                     <i class="fas fa-award text-white text-2xl"></i>
-                   </div>
-
-                   <h3 class="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                   <p class="text-gray-600 mb-4">{plan.description}</p>
-
-                   <div class="mb-4">
-                     <span class="text-4xl font-bold text-gray-900">${plan.price}</span>
-                     <span class="text-gray-600">/ {plan.period}</span>
-                   </div>
-                 </div>
-
-                 <!-- Features -->
-                 <div class="space-y-4 mb-8">
-                   {plan.features.map(feature => (
-                     <div class="flex items-center">
-                       <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                         <i class="fas fa-check text-green-600 text-xs"></i>
-                       </div>
-                       <span class="text-gray-700 text-sm">{feature}</span>
-                     </div>
-                   ))}
-                 </div>
-
-                 <!-- CTA Button -->
-                 <a href="/contacto" class={`block w-full text-center py-4 font-semibold rounded-2xl transition-all duration-300 ${plan.popular ? 'bg-accent-600 hover:bg-accent-700 text-white' : 'bg-primary-600 hover:bg-primary-700 text-white'}`}>
-                   Elegir Plan
-                 </a>
-               </div>
-             ))}
-           </div>
-         </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contacto" class="py-20 lg:py-32 bg-gradient-to-br from-primary-600 to-primary-800 text-white relative overflow-hidden observe">
-         <!-- Background Effects -->
-         <div class="absolute inset-0 opacity-10">
-           <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-float"></div>
-           <div class="absolute bottom-20 right-20 w-48 h-48 border border-white/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
-           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/10 rounded-full animate-float" style="animation-delay: 1s;"></div>
-         </div>
-
-         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <!-- Header -->
-           <div class="text-center mb-16">
-             <div class="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium mb-4">
-               <i class="fas fa-envelope mr-2"></i>
-               Contáctanos
-             </div>
-             <h2 class="text-4xl lg:text-5xl font-bold mb-4">
-               ¿Listo para la mejor <span class="text-accent-400">asesoría contable</span>?
-             </h2>
-             <p class="text-xl text-primary-100 max-w-3xl mx-auto">
-               Contáctanos para asesoría contable profesional en Cuenca Ecuador.
-               Primera consulta gratuita para evaluar tus necesidades.
-             </p>
-           </div>
-
-           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-             <!-- Contact Form -->
-             <div class="glass rounded-3xl p-8">
-               <h3 class="text-2xl font-bold mb-6">Solicita tu asesoría gratuita</h3>
-               <form class="space-y-6" onsubmit="handleSubmit(event)">
-                 <div>
-                   <label for="name" class="block text-sm font-medium mb-2">Nombre completo</label>
-                   <input type="text" id="name" name="name" required
-                          class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300">
-                 </div>
-                 <div>
-                   <label for="email" class="block text-sm font-medium mb-2">Correo electrónico</label>
-                   <input type="email" id="email" name="email" required
-                          class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300">
-                 </div>
-                 <div>
-                   <label for="message" class="block text-sm font-medium mb-2">¿En qué podemos asesorarte?</label>
-                   <textarea id="message" name="message" rows="4" required
-                             placeholder="Describe tu necesidad de asesoría contable..."
-                             class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300 resize-none"></textarea>
-                 </div>
-                 <button type="submit"
-                         class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 shadow-lg hover:shadow-xl">
-                   <i class="fas fa-paper-plane mr-3"></i>
-                   Solicitar Asesoría
-                 </button>
-               </form>
-             </div>
-
-             <!-- Contact Info -->
-             <div class="space-y-8">
-               <div>
-                 <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
-                 <div class="space-y-6">
-                   <div class="flex items-center space-x-4 group">
-                     <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                       <i class="fas fa-envelope text-accent-400"></i>
-                     </div>
-                     <div>
-                       <h4 class="font-semibold">Email</h4>
-                       <p class="text-primary-100">eugecsg@gmail.com</p>
-                     </div>
-                   </div>
-                   <div class="flex items-center space-x-4 group">
-                     <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                       <i class="fab fa-whatsapp text-accent-400"></i>
-                     </div>
-                     <div>
-                       <h4 class="font-semibold">WhatsApp</h4>
-                       <p class="text-primary-100">+593 98 791 9930</p>
-                     </div>
-                   </div>
-                   <div class="flex items-center space-x-4 group">
-                     <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                       <i class="fas fa-map-marker-alt text-accent-400"></i>
-                     </div>
-                     <div>
-                       <h4 class="font-semibold">Ubicación</h4>
-                       <p class="text-primary-100">Cuenca, Azuay, Ecuador</p>
-                     </div>
-                   </div>
-                   <div class="flex items-center space-x-4 group">
-                     <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                       <i class="fas fa-clock text-accent-400"></i>
-                     </div>
-                     <div>
-                       <h4 class="font-semibold">Horario de Asesoría</h4>
-                       <p class="text-primary-100">Lun - Vie: 8:00 AM - 6:00 PM</p>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-
-               <!-- WhatsApp CTA -->
-               <div class="bg-green-600/20 glass border border-green-400/30 rounded-2xl p-6">
-                 <div class="flex items-center mb-4">
-                   <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
-                     <i class="fab fa-whatsapp text-white text-xl"></i>
-                   </div>
-                   <div>
-                     <h4 class="font-semibold">¿Necesitas asesoría inmediata?</h4>
-                     <p class="text-sm text-primary-100">Escríbenos por WhatsApp</p>
-                   </div>
-                 </div>
-                 <button onclick="openWhatsAppModal()"
+          <!-- WhatsApp CTA -->
+          <div class="bg-green-600/20 glass border border-green-400/30 rounded-2xl p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fab fa-whatsapp text-white text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">¿Necesitas asesoría inmediata?</h4>
+                <p class="text-sm text-primary-100">Escríbenos por WhatsApp</p>
+              </div>
+            </div>
+            <button onclick="openWhatsAppModal()"
                     class="inline-flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:scale-105">
-                   <i class="fab fa-whatsapp mr-3"></i>
-                   Chatear ahora
-                 </button>
-               </div>
-             </div>
-           </div>
-         </div>
-        </section>
+              <i class="fab fa-whatsapp mr-3"></i>
+              Chatear ahora
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <script>
-         function handleSubmit(event) {
-           event.preventDefault();
-           const formData = new FormData(event.target);
-           const name = formData.get('name');
-           const email = formData.get('email');
-           const message = formData.get('message');
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
 
-           // Aquí puedes agregar la lógica para enviar el formulario
-           // Por ahora, simularemos un envío exitoso
-           alert('¡Mensaje enviado! Te contactaremos pronto.');
-           event.target.reset();
-         }
-        </script>
+      // Aquí puedes agregar la lógica para enviar el formulario
+      // Por ahora, simularemos un envío exitoso
+      alert('¡Mensaje enviado! Te contactaremos pronto.');
+      event.target.reset();
+    }
 
-        </BaseLayout>
+    function openWhatsAppModal() {
+      const phoneNumber = "593987919930";
+      const message = "Hola! Me interesa conocer más sobre sus servicios de asesoría contable en Cuenca. ¿Podrían ayudarme?";
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+
+</BaseLayout>

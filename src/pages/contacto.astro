@@ -1,0 +1,290 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="Contacto | Eugenia Guerrero CPA - Asesoría Contable en Cuenca Ecuador"
+    description="Contáctanos para asesoría contable profesional en Cuenca Ecuador. Primera consulta gratuita. WhatsApp: +593 98 791 9930 | Email: eugecsg@gmail.com"
+>
+
+  <!-- Hero Section -->
+  <section class="py-20 lg:py-32 bg-gradient-to-br from-primary-600 to-primary-800 text-white relative overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-float"></div>
+      <div class="absolute bottom-20 right-20 w-48 h-48 border border-white/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/10 rounded-full animate-float" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-slide-up">
+        <div class="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium mb-6">
+          <i class="fas fa-envelope mr-2"></i>
+          Contáctanos
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+          Solicita tu <span class="text-accent-400">asesoría contable</span>
+        </h1>
+        <p class="text-xl text-primary-100 max-w-3xl mx-auto mb-8">
+          Estamos aquí para ayudarte con todas tus necesidades contables en Cuenca Ecuador.
+          Primera consulta completamente gratuita.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="openWhatsAppModal()" class="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:scale-105">
+            <i class="fab fa-whatsapp mr-3"></i>
+            WhatsApp Directo
+          </button>
+          <a href="tel:+593987919930" class="inline-flex items-center px-8 py-4 bg-accent-500 text-white font-semibold rounded-2xl hover:bg-accent-600 transition-all duration-300 shadow-lg hover:scale-105">
+            <i class="fas fa-phone mr-3"></i>
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="glass rounded-3xl p-8 animate-slide-up" style="animation-delay: 0.2s;">
+          <h2 class="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
+          <form class="space-y-6" onsubmit="handleSubmit(event)">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2">Nombre completo *</label>
+                <input type="text" id="name" name="name" required
+                       class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300"
+                       placeholder="Tu nombre completo">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-2">Teléfono</label>
+                <input type="tel" id="phone" name="phone"
+                       class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300"
+                       placeholder="+593 99 999 9999">
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required
+                     class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300"
+                     placeholder="tu@email.com">
+            </div>
+
+            <div>
+              <label for="service" class="block text-sm font-medium mb-2">Tipo de servicio</label>
+              <select id="service" name="service"
+                      class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300">
+                <option value="" class="text-gray-800">Selecciona un servicio</option>
+                <option value="tributario" class="text-gray-800">Asesoría Tributaria</option>
+                <option value="laboral" class="text-gray-800">Gestión Laboral</option>
+                <option value="societario" class="text-gray-800">Servicios Societarios</option>
+                <option value="estados-financieros" class="text-gray-800">Estados Financieros</option>
+                <option value="software-contable" class="text-gray-800">Software Contable</option>
+                <option value="otro" class="text-gray-800">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">Mensaje *</label>
+              <textarea id="message" name="message" rows="5" required
+                        placeholder="Cuéntanos cómo podemos ayudarte con tu contabilidad..."
+                        class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300 resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 shadow-lg hover:shadow-xl">
+              <i class="fas fa-paper-plane mr-3"></i>
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-8 animate-slide-up" style="animation-delay: 0.4s;">
+          <!-- Contact Methods -->
+          <div class="glass rounded-3xl p-8">
+            <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fab fa-whatsapp text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">WhatsApp</h4>
+                  <p class="text-primary-100 mb-2">+593 98 791 9930</p>
+                  <button onclick="openWhatsAppModal()" class="text-green-400 hover:text-green-300 text-sm font-medium transition-colors">
+                    Enviar mensaje →
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-envelope text-accent-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Email</h4>
+                  <p class="text-primary-100 mb-2">eugecsg@gmail.com</p>
+                  <a href="mailto:eugecsg@gmail.com" class="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors">
+                    Enviar email →
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-phone text-accent-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Teléfono</h4>
+                  <p class="text-primary-100 mb-2">+593 98 791 9930</p>
+                  <a href="tel:+593987919930" class="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors">
+                    Llamar ahora →
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-map-marker-alt text-accent-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Ubicación</h4>
+                  <p class="text-primary-100">Cuenca, Azuay, Ecuador</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4 group">
+                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-clock text-accent-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Horario de Atención</h4>
+                  <p class="text-primary-100">Lunes - Viernes: 8:00 AM - 6:00 PM</p>
+                  <p class="text-primary-200 text-sm">Sábados: 9:00 AM - 1:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="glass rounded-3xl p-8">
+            <h3 class="text-xl font-bold mb-6">¿Necesitas ayuda inmediata?</h3>
+            <div class="space-y-4">
+              <button onclick="openWhatsAppModal()" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105">
+                <i class="fab fa-whatsapp mr-3"></i>
+                Chat por WhatsApp
+              </button>
+              <a href="tel:+593987919930" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105">
+                <i class="fas fa-phone mr-3"></i>
+                Llamada Directa
+              </a>
+              <a href="mailto:eugecsg@gmail.com" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105">
+                <i class="fas fa-envelope mr-3"></i>
+                Enviar Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 observe">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Preguntas frecuentes
+        </h2>
+        <p class="text-lg text-gray-600">
+          Respuestas a las dudas más comunes sobre nuestros servicios contables
+        </p>
+      </div>
+
+      <div class="space-y-6 observe">
+        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
+              <i class="fas fa-question text-primary-600 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿La primera consulta es realmente gratuita?</h3>
+              <p class="text-gray-600">Sí, ofrecemos una consulta inicial completamente gratuita de 30 minutos para evaluar tus necesidades contables y recomendarte la mejor solución.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
+              <i class="fas fa-question text-primary-600 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Qué documentos necesito para la asesoría contable?</h3>
+              <p class="text-gray-600">Depende del servicio, pero generalmente necesitamos: RUC, estados de cuenta, facturas, comprobantes de retención y documentos de identificación. Te daremos una lista específica según tu caso.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
+              <i class="fas fa-question text-primary-600 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Manejan empresas de todos los tamaños?</h3>
+              <p class="text-gray-600">Sí, trabajamos con personas naturales, microempresas, PYMES y grandes empresas. Adaptamos nuestros servicios a las necesidades específicas de cada cliente.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
+              <i class="fas fa-question text-primary-600 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuánto tiempo toman los trámites con el SRI?</h3>
+              <p class="text-gray-600">Los tiempos varían según el trámite: declaraciones simples (1-2 días), constitución de empresas (7-10 días), otros trámites más complejos pueden tomar 2-3 semanas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const service = formData.get('service');
+      const message = formData.get('message');
+
+      // Simular envío exitoso
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Enviando...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-check mr-3"></i>¡Enviado!';
+        submitBtn.classList.remove('bg-accent-500', 'hover:bg-accent-600');
+        submitBtn.classList.add('bg-green-500');
+
+        alert('¡Mensaje enviado exitosamente! Te contactaremos pronto.');
+        event.target.reset();
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.classList.add('bg-accent-500', 'hover:bg-accent-600');
+          submitBtn.classList.remove('bg-green-500');
+          submitBtn.disabled = false;
+        }, 3000);
+      }, 2000);
+    }
+  </script>
+
+</BaseLayout>

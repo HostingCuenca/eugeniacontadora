@@ -1,0 +1,104 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/servicios', label: 'Servicios' },
+  { href: '/sobre-mi', label: 'Sobre mí' },
+  { href: '/contacto', label: 'Contacto' },
+];
+
+const isActive = (href: string) => {
+  if (href === '/') {
+    return currentPath === '';
+  }
+  return currentPath.startsWith(href.slice(1));
+};
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/" class="text-primary-500 font-heading font-bold text-xl md:text-2xl transition hover:text-primary-600">
+      Eugenia Guerrero
+      <span class="block text-sm text-secondary-500 font-normal">Contadora</span>
+    </a>
+    
+    <!-- Mobile menu button -->
+    <button id="menu-toggle" class="block md:hidden text-primary-500 focus:outline-none" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      {
+        navItems.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'py-2 font-medium transition-colors duration-200 hover:text-primary-500',
+              isActive(href) ? 'text-primary-500 border-b-2 border-primary-500' : 'text-gray-600',
+            ]}
+          >
+            {label}
+          </a>
+        ))
+      }
+      <a 
+        href="/contacto" 
+        class="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-200 shadow-sm"
+      >
+        Solicitar asesoría
+      </a>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md p-4 md:hidden animate-fade-in">
+      <div class="flex flex-col space-y-4">
+        {
+          navItems.map(({ href, label }) => (
+            <a
+              href={href}
+              class:list={[
+                'py-2 font-medium transition-colors duration-200',
+                isActive(href) ? 'text-primary-500' : 'text-gray-600',
+              ]}
+            >
+              {label}
+            </a>
+          ))
+        }
+        <a 
+          href="/contacto" 
+          class="px-4 py-2 bg-primary-500 text-white rounded-md text-center hover:bg-primary-600 transition-colors duration-200 shadow-sm"
+        >
+          Solicitar asesoría
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (event) => {
+    const isClickInsideMenu = mobileMenu?.contains(event.target as Node);
+    const isClickOnToggle = menuToggle?.contains(event.target as Node);
+    
+    if (!isClickInsideMenu && !isClickOnToggle && !mobileMenu?.classList.contains('hidden')) {
+      mobileMenu?.classList.add('hidden');
+    }
+  });
+</script>

@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceCategories = [
+  {
+    name: 'Asesoría Tributaria',
+    icon: 'fas fa-file-invoice-dollar',
+    description: 'Gestión completa de obligaciones tributarias para personas naturales y jurídicas en Ecuador',
+    services: [
+      {
+        name: 'Declaraciones de Impuesto a la Renta',
+        description: 'Elaboración y presentación de declaraciones anuales de IR para personas naturales y jurídicas',
+        price: 45,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/hero.jpeg'
+      },
+      {
+        name: 'Declaraciones de IVA',
+        description: 'Declaraciones mensuales de IVA para contribuyentes especiales y ordinarios',
+        price: 25,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/section.jpeg'
+      },
+      {
+        name: 'Retenciones en la Fuente',
+        description: 'Cálculo y declaración de retenciones IR según normativa ecuatoriana',
+        price: 20,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/nosotros.jpeg'
+      },
+      {
+        name: 'Consultoría Tributaria',
+        description: 'Asesoría en planificación y optimización tributaria personalizada',
+        price: 60,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/hero.jpeg'
+      }
+    ]
+  },
+  {
+    name: 'Gestión Laboral',
+    icon: 'fas fa-users',
+    description: 'Administración integral de recursos humanos y nómina empresarial',
+    services: [
+      {
+        name: 'Roles de Pago',
+        description: 'Elaboración de roles de pago mensuales con cálculos precisos',
+        price: 35,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/section.jpeg'
+      },
+      {
+        name: 'Avisos de Entrada y Salida IESS',
+        description: 'Gestión de avisos al IESS para nuevos empleados y finiquitos',
+        price: 15,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/nosotros.jpeg'
+      },
+      {
+        name: 'Préstamos Hipotecarios IESS',
+        description: 'Asesoría y trámites para préstamos hipotecarios del IESS',
+        price: 80,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/hero.jpeg'
+      },
+      {
+        name: 'Préstamos Quirografarios IESS',
+        description: 'Asesoría y trámites para préstamos quirografarios del IESS',
+        price: 50,
+        duration: 'Tiempo referencial',
+        image: '/src/assets/section.jpeg'
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout
+    title="Mejores Servicios Contables en Cuenca Ecuador | Asesoría Tributaria Profesional"
+    description="Servicios contables profesionales en Cuenca Ecuador. Asesoría tributaria, gestión laboral, estados financieros, trámites SRI. Contadora CPA certificada."
+>
+
+  <!-- Hero Section -->
+  <section class="py-20 lg:py-32 bg-gradient-to-br from-primary-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center animate-slide-up">
+        <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
+          <i class="fas fa-briefcase mr-2"></i>
+          Servicios Contables Profesionales
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Servicios <span class="gradient-text">contables</span> en Cuenca
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Descubre nuestra amplia gama de servicios de asesoría contable y tributaria
+          diseñados específicamente para empresas en Cuenca Ecuador.
+        </p>
+        <a href="#servicios" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+          Explorar asesorías
+          <i class="fas fa-arrow-down ml-3"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Categories -->
+  <section id="servicios" class="py-20 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {serviceCategories.map((category, categoryIndex) => (
+          <div class={`mb-20 observe ${categoryIndex !== serviceCategories.length - 1 ? 'border-b border-gray-100 pb-20' : ''}`}>
+            <!-- Category Header -->
+            <div class="text-center mb-12">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <i class={`${category.icon} text-white text-3xl`}></i>
+              </div>
+              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                {category.name} en Cuenca
+              </h2>
+              <p class="text-lg text-gray-600 max-w-2xl mx-auto">{category.description}</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class={`grid gap-6 ${category.services.length === 4 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4' : category.services.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto' : category.services.length === 2 ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' : 'grid-cols-1 max-w-md mx-auto'}`}>
+              {category.services.map((service, serviceIndex) => (
+                  <div class="group bg-gray-50 rounded-3xl p-6 hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary-200 card-hover animate-scale-in" style={`animation-delay: ${serviceIndex * 0.1}s`}>
+                    <!-- Service Image -->
+                    <div class="w-full h-40 rounded-2xl overflow-hidden mb-6">
+                      <img src={service.image} alt={`${service.name} - Cuenca Ecuador`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+
+                    <!-- Service Content -->
+                    <div class="space-y-4">
+                      <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-600 transition-colors leading-tight">
+                        {service.name}
+                      </h3>
+                      <p class="text-gray-600 leading-relaxed text-sm">{service.description}</p>
+
+                      <!-- Service Details -->
+                      <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200">
+                        <div class="flex items-center text-xs bg-primary-50 text-primary-700 px-2 py-1 rounded-lg">
+                          <i class="fas fa-dollar-sign mr-1"></i>
+                          <span class="font-semibold">${service.price}</span>
+                        </div>
+                        <div class="flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-lg">
+                          <i class="fas fa-clock mr-1"></i>
+                          <span>{service.duration}</span>
+                        </div>
+                      </div>
+
+
+                      <a href="/contacto" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group text-sm mt-3">
+                        Solicitar servicio
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-xs"></i>
+                      </a>
+                    </div>
+                  </div>
+              ))}
+            </div>
+          </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        ¿Necesitas asesoría contable personalizada?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8">
+        Ofrecemos soluciones de asesoría contable personalizadas para empresas en Cuenca Ecuador.
+        Contáctanos y te ayudaremos a encontrar la mejor opción para tu negocio.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contacto" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105">
+          <i class="fas fa-envelope mr-3"></i>
+          Solicitar asesoría
+        </a>
+        <button onclick="openWhatsAppModal()" class="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:scale-105">
+          <i class="fab fa-whatsapp mr-3"></i>
+          Chat directo
+        </button>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,104 +1,204 @@
 ---
+// src/components/Header.astro
+
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+const currentPath = pathname.slice(1);
 
 const navItems = [
   { href: '/', label: 'Inicio' },
   { href: '/servicios', label: 'Servicios' },
   { href: '/sobre-mi', label: 'Sobre mí' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: '/contacto', label: 'Contacto' }
 ];
 
 const isActive = (href: string) => {
-  if (href === '/') {
-    return currentPath === '';
-  }
+  if (href === '/') return currentPath === '';
   return currentPath.startsWith(href.slice(1));
 };
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="/" class="text-primary-500 font-heading font-bold text-xl md:text-2xl transition hover:text-primary-600">
-      Eugenia Guerrero
-      <span class="block text-sm text-secondary-500 font-normal">Contadora</span>
-    </a>
-    
-    <!-- Mobile menu button -->
-    <button id="menu-toggle" class="block md:hidden text-primary-500 focus:outline-none" aria-label="Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>
-    </button>
-    
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-8">
-      {
-        navItems.map(({ href, label }) => (
-          <a
-            href={href}
-            class:list={[
-              'py-2 font-medium transition-colors duration-200 hover:text-primary-500',
-              isActive(href) ? 'text-primary-500 border-b-2 border-primary-500' : 'text-gray-600',
-            ]}
-          >
-            {label}
-          </a>
-        ))
-      }
-      <a 
-        href="/contacto" 
-        class="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-200 shadow-sm"
-      >
-        Solicitar asesoría
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 hover:scale-105 transition-transform duration-200">
+        <div class="w-11 h-11 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-lg">
+          <i class="fas fa-chart-line text-white text-lg"></i>
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-heading font-bold text-lg text-gray-900">Eugenia Guerrero</div>
+          <div class="text-xs font-medium text-primary-600 uppercase tracking-wide">CPA • Cuenca Ecuador</div>
+        </div>
       </a>
-    </nav>
-    
-    <!-- Mobile Navigation -->
-    <nav id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white shadow-md p-4 md:hidden animate-fade-in">
-      <div class="flex flex-col space-y-4">
-        {
-          navItems.map(({ href, label }) => (
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1">
+        {navItems.map(({ href, label }) => (
             <a
-              href={href}
-              class:list={[
-                'py-2 font-medium transition-colors duration-200',
-                isActive(href) ? 'text-primary-500' : 'text-gray-600',
-              ]}
+                href={href}
+                class={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
+                    isActive(href)
+                        ? 'text-primary-600 bg-primary-50 font-semibold'
+                        : 'text-gray-600 hover:text-primary-600 hover:bg-primary-50'
+                }`}
             >
               {label}
             </a>
-          ))
-        }
-        <a 
-          href="/contacto" 
-          class="px-4 py-2 bg-primary-500 text-white rounded-md text-center hover:bg-primary-600 transition-colors duration-200 shadow-sm"
+        ))}
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="hidden md:flex items-center gap-3">
+        <button
+            onclick="sendWhatsApp()"
+            class="w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-xl transition-all duration-200 hover:scale-105 shadow-lg"
+            title="WhatsApp"
         >
-          Solicitar asesoría
+          <i class="fab fa-whatsapp text-lg"></i>
+        </button>
+
+        <a
+            href="/contacto"
+            class="flex items-center gap-2 px-4 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-105 shadow-lg text-sm"
+        >
+          <i class="fas fa-calendar-check"></i>
+          <span>Consulta Gratuita</span>
         </a>
       </div>
-    </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+          aria-label="Menú"
+      >
+        <div class="w-6 h-6 flex flex-col justify-center space-y-1">
+          <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300 hamburger-1"></span>
+          <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300 hamburger-2"></span>
+          <span class="block w-6 h-0.5 bg-gray-600 transition-all duration-300 hamburger-3"></span>
+        </div>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 z-50 opacity-0 invisible transition-all duration-300">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="mobile-overlay"></div>
+
+    <!-- Menu Content -->
+    <div class="absolute right-0 top-0 h-full w-80 max-w-[90vw] bg-white shadow-2xl transform translate-x-full transition-transform duration-300" id="mobile-content">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between p-6 border-b border-gray-200">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+            <i class="fas fa-chart-line text-white text-sm"></i>
+          </div>
+          <span class="font-semibold text-gray-900">Eugenia Guerrero CPA</span>
+        </div>
+        <button id="mobile-close" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
+          <i class="fas fa-times text-gray-600"></i>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="p-6 space-y-2">
+        {navItems.map(({ href, label }) => (
+            <a
+                href={href}
+                class={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
+                    isActive(href)
+                        ? 'text-primary-600 bg-primary-50 font-semibold'
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
+                }`}
+            >
+              {label}
+            </a>
+        ))}
+      </nav>
+
+      <!-- Mobile Actions -->
+      <div class="p-6 space-y-3 border-t border-gray-200">
+        <a
+            href="/contacto"
+            class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors duration-200"
+        >
+          <i class="fas fa-calendar-check"></i>
+          Consulta Gratuita
+        </a>
+
+        <button
+            onclick="sendWhatsApp()"
+            class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-colors duration-200"
+        >
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp Directo
+        </button>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="p-6 bg-gray-50 border-t border-gray-200 space-y-3">
+        <div class="flex items-center gap-3 text-sm text-gray-600">
+          <i class="fas fa-phone w-4"></i>
+          <span>+593 98 791 9930</span>
+        </div>
+        <div class="flex items-center gap-3 text-sm text-gray-600">
+          <i class="fas fa-envelope w-4"></i>
+          <span>eugecsg@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-3 text-sm text-gray-600">
+          <i class="fas fa-map-marker-alt w-4"></i>
+          <span>Cuenca, Ecuador</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </header>
 
 <script>
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+  const mobileContent = document.getElementById('mobile-content');
+  const mobileClose = document.getElementById('mobile-close');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+  const hamburgers = document.querySelectorAll('[class*="hamburger-"]');
+
+  function openMobileMenu() {
+    mobileMenu?.classList.remove('opacity-0', 'invisible');
+    mobileContent?.classList.remove('translate-x-full');
+    mobileMenuBtn?.classList.add('active');
+
+    // Animate hamburger
+    if (hamburgers[0]) hamburgers[0].classList.add('rotate-45', 'translate-y-1.5');
+    if (hamburgers[1]) hamburgers[1].classList.add('opacity-0');
+    if (hamburgers[2]) hamburgers[2].classList.add('-rotate-45', '-translate-y-1.5');
+
+    document.body.style.overflow = 'hidden';
   }
-  
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (event) => {
-    const isClickInsideMenu = mobileMenu?.contains(event.target as Node);
-    const isClickOnToggle = menuToggle?.contains(event.target as Node);
-    
-    if (!isClickInsideMenu && !isClickOnToggle && !mobileMenu?.classList.contains('hidden')) {
-      mobileMenu?.classList.add('hidden');
-    }
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('opacity-0', 'invisible');
+    mobileContent?.classList.add('translate-x-full');
+    mobileMenuBtn?.classList.remove('active');
+
+    // Reset hamburger
+    if (hamburgers[0]) hamburgers[0].classList.remove('rotate-45', 'translate-y-1.5');
+    if (hamburgers[1]) hamburgers[1].classList.remove('opacity-0');
+    if (hamburgers[2]) hamburgers[2].classList.remove('-rotate-45', '-translate-y-1.5');
+
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuBtn?.addEventListener('click', openMobileMenu);
+  mobileClose?.addEventListener('click', closeMobileMenu);
+  mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+  // Close menu when clicking on navigation links
+  document.querySelectorAll('#mobile-menu a[href]').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
   });
 </script>

@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
     title="Contacto | Eugenia Guerrero CPA - Asesoría Contable en Cuenca Ecuador"
-    description="Contáctanos para asesoría contable profesional en Cuenca Ecuador. Primera consulta gratuita. WhatsApp: +593 98 791 9930 | Email: eugecsg@gmail.com"
+    description="Contáctanos para asesoría contable profesional en Cuenca Ecuador. Consulta inicial disponible. WhatsApp: +593 98 791 9930 | Email: eugecsg@gmail.com"
 >
 
   <!-- Hero Section -->
@@ -18,23 +18,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-slide-up">
-        <div class="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium mb-6">
+        <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
           <i class="fas fa-envelope mr-2"></i>
           Contáctanos
         </div>
         <h1 class="text-4xl lg:text-6xl font-bold mb-6">
-          Solicita tu <span class="text-accent-400">asesoría contable</span>
+          Solicita tu <span class="text-secondary-400">asesoría contable</span>
         </h1>
         <p class="text-xl text-primary-100 max-w-3xl mx-auto mb-8">
           Estamos aquí para ayudarte con todas tus necesidades contables en Cuenca Ecuador.
-          Primera consulta completamente gratuita.
+          Te ofrecemos una evaluación inicial para conocer mejor tu situación.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onclick="openWhatsAppModal()" class="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:scale-105">
+          <button onclick="sendWhatsApp('Hola! Me interesa conocer más sobre sus servicios contables. ¿Podrían ayudarme?')" class="inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:scale-105">
             <i class="fab fa-whatsapp mr-3"></i>
             WhatsApp Directo
           </button>
-          <a href="tel:+593987919930" class="inline-flex items-center px-8 py-4 bg-accent-500 text-white font-semibold rounded-2xl hover:bg-accent-600 transition-all duration-300 shadow-lg hover:scale-105">
+          <a href="tel:+593987919930" class="inline-flex items-center px-8 py-4 bg-secondary-500 text-white font-semibold rounded-2xl hover:bg-secondary-600 transition-all duration-300 shadow-lg hover:scale-105">
             <i class="fas fa-phone mr-3"></i>
             Llamar Ahora
           </a>
@@ -43,20 +43,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Contact Form -->
-        <div class="glass rounded-3xl p-8 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 animate-slide-up" style="animation-delay: 0.2s;">
           <h2 class="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
           <form class="space-y-6" onsubmit="handleSubmit(event)">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium mb-2">Nombre completo *</label>
                 <input type="text" id="name" name="name" required
-                       class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300"
+                       class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300"
                        placeholder="Tu nombre completo">
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium mb-2">Teléfono</label>
                 <input type="tel" id="phone" name="phone"
-                       class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300"
+                       class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300"
                        placeholder="+593 99 999 9999">
               </div>
             </div>
@@ -64,20 +64,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div>
               <label for="email" class="block text-sm font-medium mb-2">Correo electrónico *</label>
               <input type="email" id="email" name="email" required
-                     class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300"
+                     class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300"
                      placeholder="tu@email.com">
             </div>
 
             <div>
               <label for="service" class="block text-sm font-medium mb-2">Tipo de servicio</label>
               <select id="service" name="service"
-                      class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300">
+                      class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300">
                 <option value="" class="text-gray-800">Selecciona un servicio</option>
-                <option value="tributario" class="text-gray-800">Asesoría Tributaria</option>
-                <option value="laboral" class="text-gray-800">Gestión Laboral</option>
-                <option value="societario" class="text-gray-800">Servicios Societarios</option>
+                <option value="tributario" class="text-gray-800">Asesoría Tributaria SRI</option>
+                <option value="laboral" class="text-gray-800">Gestión Laboral IESS</option>
+                <option value="ministerio-trabajo" class="text-gray-800">Ministerio de Trabajo</option>
                 <option value="estados-financieros" class="text-gray-800">Estados Financieros</option>
-                <option value="software-contable" class="text-gray-800">Software Contable</option>
+                <option value="constitucion-empresas" class="text-gray-800">Constitución de Empresas</option>
                 <option value="otro" class="text-gray-800">Otro</option>
               </select>
             </div>
@@ -86,11 +86,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <label for="message" class="block text-sm font-medium mb-2">Mensaje *</label>
               <textarea id="message" name="message" rows="5" required
                         placeholder="Cuéntanos cómo podemos ayudarte con tu contabilidad..."
-                        class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:border-transparent transition-all duration-300 resize-none"></textarea>
+                        class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-300 resize-none"></textarea>
             </div>
 
             <button type="submit"
-                    class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 shadow-lg hover:shadow-xl">
+                    class="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 shadow-lg hover:shadow-xl">
               <i class="fas fa-paper-plane mr-3"></i>
               Enviar Mensaje
             </button>
@@ -100,7 +100,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Contact Info -->
         <div class="space-y-8 animate-slide-up" style="animation-delay: 0.4s;">
           <!-- Contact Methods -->
-          <div class="glass rounded-3xl p-8">
+          <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
             <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
             <div class="space-y-6">
               <div class="flex items-start space-x-4 group">
@@ -110,41 +110,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div>
                   <h4 class="font-semibold text-lg">WhatsApp</h4>
                   <p class="text-primary-100 mb-2">+593 98 791 9930</p>
-                  <button onclick="openWhatsAppModal()" class="text-green-400 hover:text-green-300 text-sm font-medium transition-colors">
+                  <button onclick="sendWhatsApp('Hola! Me interesa conocer más sobre sus servicios contables. ¿Podrían ayudarme?')" class="text-green-400 hover:text-green-300 text-sm font-medium transition-colors">
                     Enviar mensaje →
                   </button>
                 </div>
               </div>
 
               <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <i class="fas fa-envelope text-accent-400 text-xl"></i>
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-envelope text-secondary-400 text-xl"></i>
                 </div>
                 <div>
                   <h4 class="font-semibold text-lg">Email</h4>
                   <p class="text-primary-100 mb-2">eugecsg@gmail.com</p>
-                  <a href="mailto:eugecsg@gmail.com" class="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors">
+                  <a href="mailto:eugecsg@gmail.com" class="text-secondary-400 hover:text-secondary-300 text-sm font-medium transition-colors">
                     Enviar email →
                   </a>
                 </div>
               </div>
 
               <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <i class="fas fa-phone text-accent-400 text-xl"></i>
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-phone text-secondary-400 text-xl"></i>
                 </div>
                 <div>
                   <h4 class="font-semibold text-lg">Teléfono</h4>
                   <p class="text-primary-100 mb-2">+593 98 791 9930</p>
-                  <a href="tel:+593987919930" class="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors">
+                  <a href="tel:+593987919930" class="text-secondary-400 hover:text-secondary-300 text-sm font-medium transition-colors">
                     Llamar ahora →
                   </a>
                 </div>
               </div>
 
               <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <i class="fas fa-map-marker-alt text-accent-400 text-xl"></i>
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-map-marker-alt text-secondary-400 text-xl"></i>
                 </div>
                 <div>
                   <h4 class="font-semibold text-lg">Ubicación</h4>
@@ -153,8 +153,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
 
               <div class="flex items-start space-x-4 group">
-                <div class="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <i class="fas fa-clock text-accent-400 text-xl"></i>
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i class="fas fa-clock text-secondary-400 text-xl"></i>
                 </div>
                 <div>
                   <h4 class="font-semibold text-lg">Horario de Atención</h4>
@@ -165,21 +165,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
 
-          <!-- Quick Actions -->
-          <div class="glass rounded-3xl p-8">
-            <h3 class="text-xl font-bold mb-6">¿Necesitas ayuda inmediata?</h3>
-            <div class="space-y-4">
-              <button onclick="openWhatsAppModal()" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105">
-                <i class="fab fa-whatsapp mr-3"></i>
-                Chat por WhatsApp
+          <!-- Quick Actions - 3 columnas -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+            <h3 class="text-xl font-bold mb-6 text-center">¿Necesitas ayuda inmediata?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <button onclick="sendWhatsApp('Hola! Necesito ayuda inmediata con un tema contable. ¿Están disponibles?')" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 text-sm">
+                <i class="fab fa-whatsapp mr-2"></i>
+                <span class="hidden lg:inline">Chat</span>
+                <span class="lg:hidden">WhatsApp</span>
               </button>
-              <a href="tel:+593987919930" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105">
-                <i class="fas fa-phone mr-3"></i>
-                Llamada Directa
+              <a href="tel:+593987919930" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 text-sm">
+                <i class="fas fa-phone mr-2"></i>
+                <span class="hidden lg:inline">Llamar</span>
+                <span class="lg:hidden">Teléfono</span>
               </a>
-              <a href="mailto:eugecsg@gmail.com" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105">
-                <i class="fas fa-envelope mr-3"></i>
-                Enviar Email
+              <a href="mailto:eugecsg@gmail.com" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-105 text-sm">
+                <i class="fas fa-envelope mr-2"></i>
+                <span class="hidden lg:inline">Email</span>
+                <span class="lg:hidden">Correo</span>
               </a>
             </div>
           </div>
@@ -201,19 +204,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="space-y-6 observe">
-        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
           <div class="flex items-start">
             <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
               <i class="fas fa-question text-primary-600 text-sm"></i>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿La primera consulta es realmente gratuita?</h3>
-              <p class="text-gray-600">Sí, ofrecemos una consulta inicial completamente gratuita de 30 minutos para evaluar tus necesidades contables y recomendarte la mejor solución.</p>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cómo funciona la evaluación inicial?</h3>
+              <p class="text-gray-600">Realizamos una evaluación de tus necesidades contables donde analizamos tu situación actual y te recomendamos las mejores soluciones para tu empresa.</p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
           <div class="flex items-start">
             <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
               <i class="fas fa-question text-primary-600 text-sm"></i>
@@ -225,19 +228,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
           <div class="flex items-start">
             <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
               <i class="fas fa-question text-primary-600 text-sm"></i>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Manejan empresas de todos los tamaños?</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Trabajan con empresas de todos los tamaños?</h3>
               <p class="text-gray-600">Sí, trabajamos con personas naturales, microempresas, PYMES y grandes empresas. Adaptamos nuestros servicios a las necesidades específicas de cada cliente.</p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
           <div class="flex items-start">
             <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
               <i class="fas fa-question text-primary-600 text-sm"></i>
@@ -245,6 +248,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div>
               <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuánto tiempo toman los trámites con el SRI?</h3>
               <p class="text-gray-600">Los tiempos varían según el trámite: declaraciones simples (1-2 días), constitución de empresas (7-10 días), otros trámites más complejos pueden tomar 2-3 semanas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
+              <i class="fas fa-question text-primary-600 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Ofrecen servicios de urgencia?</h3>
+              <p class="text-gray-600">Sí, manejamos trámites urgentes con tiempos de respuesta acelerados. Los costos pueden variar según la urgencia y complejidad del servicio requerido.</p>
             </div>
           </div>
         </div>
@@ -262,7 +277,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const service = formData.get('service');
       const message = formData.get('message');
 
-      // Simular envío exitoso
+      // Crear mensaje para WhatsApp
+      let whatsappMessage = `Hola! Soy ${name}.\n\n${message}`;
+      if (service) {
+        whatsappMessage += `\n\nServicio de interés: ${service}`;
+      }
+      whatsappMessage += `\n\nMi email: ${email}`;
+      if (phone) {
+        whatsappMessage += `\nTeléfono: ${phone}`;
+      }
+
+      // Simular envío
       const submitBtn = event.target.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
@@ -271,19 +296,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       setTimeout(() => {
         submitBtn.innerHTML = '<i class="fas fa-check mr-3"></i>¡Enviado!';
-        submitBtn.classList.remove('bg-accent-500', 'hover:bg-accent-600');
+        submitBtn.classList.remove('bg-secondary-500', 'hover:bg-secondary-600');
         submitBtn.classList.add('bg-green-500');
 
-        alert('¡Mensaje enviado exitosamente! Te contactaremos pronto.');
+        // Enviar por WhatsApp
+        sendWhatsApp(whatsappMessage);
+
+        // Reset form
         event.target.reset();
 
         setTimeout(() => {
           submitBtn.innerHTML = originalText;
-          submitBtn.classList.add('bg-accent-500', 'hover:bg-accent-600');
+          submitBtn.classList.add('bg-secondary-500', 'hover:bg-secondary-600');
           submitBtn.classList.remove('bg-green-500');
           submitBtn.disabled = false;
         }, 3000);
-      }, 2000);
+      }, 1500);
     }
   </script>
 

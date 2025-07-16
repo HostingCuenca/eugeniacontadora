@@ -6,34 +6,43 @@ const serviceCategories = [
     name: 'Asesoría Tributaria',
     icon: 'fas fa-file-invoice-dollar',
     description: 'Gestión completa de obligaciones tributarias para personas naturales y jurídicas en Ecuador',
+    color: 'from-blue-500 to-blue-600',
     services: [
       {
         name: 'Declaraciones de Impuesto a la Renta',
-        description: 'Elaboración y presentación de declaraciones anuales de IR para personas naturales y jurídicas',
+        description: 'Elaboración y presentación de declaraciones anuales de IR',
         price: 45,
         duration: 'Tiempo referencial',
-        image: '/src/assets/hero.jpeg'
+        icon: 'fas fa-file-alt',
+        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Declaraciones de Impuesto a la Renta ($45). ¿Podrían darme más información?'
       },
       {
         name: 'Declaraciones de IVA',
-        description: 'Declaraciones mensuales de IVA para contribuyentes especiales y ordinarios',
+        description: 'Declaraciones mensuales de IVA para contribuyentes',
         price: 25,
         duration: 'Tiempo referencial',
-        image: '/src/assets/section.jpeg'
+        icon: 'fas fa-receipt',
+        image: 'https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Declaraciones de IVA ($25). ¿Podrían darme más información?'
       },
       {
         name: 'Retenciones en la Fuente',
-        description: 'Cálculo y declaración de retenciones IR según normativa ecuatoriana',
+        description: 'Cálculo y declaración de retenciones IR',
         price: 20,
         duration: 'Tiempo referencial',
-        image: '/src/assets/nosotros.jpeg'
+        icon: 'fas fa-calculator',
+        image: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Retenciones en la Fuente ($20). ¿Podrían darme más información?'
       },
       {
         name: 'Consultoría Tributaria',
-        description: 'Asesoría en planificación y optimización tributaria personalizada',
+        description: 'Asesoría en planificación y optimización tributaria',
         price: 60,
         duration: 'Tiempo referencial',
-        image: '/src/assets/hero.jpeg'
+        icon: 'fas fa-chart-pie',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Consultoría Tributaria ($60). ¿Podrían darme más información?'
       }
     ]
   },
@@ -41,38 +50,134 @@ const serviceCategories = [
     name: 'Gestión Laboral',
     icon: 'fas fa-users',
     description: 'Administración integral de recursos humanos y nómina empresarial',
+    color: 'from-green-500 to-green-600',
     services: [
       {
         name: 'Roles de Pago',
-        description: 'Elaboración de roles de pago mensuales con cálculos precisos',
+        description: 'Elaboración de roles de pago mensuales precisos',
         price: 35,
         duration: 'Tiempo referencial',
-        image: '/src/assets/section.jpeg'
+        icon: 'fas fa-money-check-alt',
+        image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Roles de Pago ($35). ¿Podrían darme más información?'
       },
       {
-        name: 'Avisos de Entrada y Salida IESS',
-        description: 'Gestión de avisos al IESS para nuevos empleados y finiquitos',
+        name: 'Avisos IESS',
+        description: 'Gestión de avisos de entrada y salida IESS',
         price: 15,
         duration: 'Tiempo referencial',
-        image: '/src/assets/nosotros.jpeg'
+        icon: 'fas fa-user-plus',
+        image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Avisos IESS ($15). ¿Podrían darme más información?'
       },
       {
-        name: 'Préstamos Hipotecarios IESS',
-        description: 'Asesoría y trámites para préstamos hipotecarios del IESS',
+        name: 'Préstamos IESS',
+        description: 'Asesoría para préstamos hipotecarios y quirografarios',
+        price: 65,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-hand-holding-usd',
+        image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Préstamos IESS ($65). ¿Podrían darme más información?'
+      }
+    ]
+  },
+  {
+    name: 'Servicios Societarios',
+    icon: 'fas fa-building',
+    description: 'Constitución de empresas, cambios societarios y trámites corporativos',
+    color: 'from-purple-500 to-purple-600',
+    services: [
+      {
+        name: 'Constitución de Empresas',
+        description: 'Trámites completos para constitución de compañías',
+        price: 350,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-handshake',
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Constitución de Empresas ($350). ¿Podrían darme más información?'
+      },
+      {
+        name: 'Cambios Societarios',
+        description: 'Modificaciones en estructura societaria y aumentos de capital',
+        price: 135,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-exchange-alt',
+        image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Cambios Societarios ($135). ¿Podrían darme más información?'
+      }
+    ]
+  },
+  {
+    name: 'Estados Financieros',
+    icon: 'fas fa-chart-line',
+    description: 'Elaboración de estados financieros bajo NIIF y análisis empresarial',
+    color: 'from-orange-500 to-orange-600',
+    services: [
+      {
+        name: 'Estados Financieros NIIF',
+        description: 'Elaboración completa de EEFF bajo NIIF',
+        price: 200,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-file-contract',
+        image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Estados Financieros NIIF ($200). ¿Podrían darme más información?'
+      },
+      {
+        name: 'Análisis Financiero',
+        description: 'Interpretación y análisis de ratios financieros',
+        price: 120,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-chart-bar',
+        image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Análisis Financiero ($120). ¿Podrían darme más información?'
+      },
+      {
+        name: 'Balance General',
+        description: 'Elaboración del balance general empresarial',
+        price: 90,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-balance-scale',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Balance General ($90). ¿Podrían darme más información?'
+      }
+    ]
+  },
+  {
+    name: 'Software y Digitalización',
+    icon: 'fas fa-laptop-code',
+    description: 'Implementación y manejo de sistemas contables digitales',
+    color: 'from-indigo-500 to-indigo-600',
+    services: [
+      {
+        name: 'Implementación Software Contable',
+        description: 'Instalación y configuración de sistemas contables',
+        price: 150,
+        duration: 'Tiempo referencial',
+        icon: 'fas fa-cogs',
+        image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Implementación de Software Contable ($150). ¿Podrían darme más información?'
+      },
+      {
+        name: 'Capacitación Digital',
+        description: 'Entrenamiento en uso de software contable',
         price: 80,
         duration: 'Tiempo referencial',
-        image: '/src/assets/hero.jpeg'
-      },
-      {
-        name: 'Préstamos Quirografarios IESS',
-        description: 'Asesoría y trámites para préstamos quirografarios del IESS',
-        price: 50,
-        duration: 'Tiempo referencial',
-        image: '/src/assets/section.jpeg'
+        icon: 'fas fa-graduation-cap',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Capacitación Digital ($80). ¿Podrían darme más información?'
       }
     ]
   }
 ];
+
+function getGridClasses(servicesCount) {
+  if (servicesCount === 1) return "grid-cols-1 max-w-md mx-auto";
+  if (servicesCount === 2) return "grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto";
+  if (servicesCount === 3) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto";
+  if (servicesCount === 4) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-4";
+  if (servicesCount === 5) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5";
+  return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+}
 ---
 
 <BaseLayout
@@ -80,22 +185,122 @@ const serviceCategories = [
     description="Servicios contables profesionales en Cuenca Ecuador. Asesoría tributaria, gestión laboral, estados financieros, trámites SRI. Contadora CPA certificada."
 >
 
+  <style>
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px) rotateX(5deg);
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .service-image {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover .service-image {
+      transform: scale(1.1);
+    }
+
+    .price-badge {
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      opacity: 0.7;
+    }
+
+    .price-badge:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .category-header {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .service-card-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+    }
+
+    .btn-whatsapp {
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    .modal-backdrop {
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .show-price {
+      opacity: 1 !important;
+    }
+  </style>
+
   <!-- Hero Section -->
-  <section class="py-20 lg:py-32 bg-gradient-to-br from-primary-50 to-white">
+  <section class="py-20 lg:py-32 gradient-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center animate-slide-up">
-        <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
+      <div class="text-center category-header">
+        <div class="inline-flex items-center px-6 py-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-8 shadow-sm">
           <i class="fas fa-briefcase mr-2"></i>
-          Servicios Contables Profesionales
+          Servicios Contables Profesionales en Cuenca
         </div>
         <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-          Servicios <span class="gradient-text">contables</span> en Cuenca
+          Servicios <span class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">contables</span> especializados
         </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
           Descubre nuestra amplia gama de servicios de asesoría contable y tributaria
           diseñados específicamente para empresas en Cuenca Ecuador.
         </p>
-        <a href="#servicios" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+        <a href="#servicios" class="inline-flex items-center px-8 py-4 btn-primary text-white font-semibold rounded-2xl shadow-lg">
           Explorar asesorías
           <i class="fas fa-arrow-down ml-3"></i>
         </a>
@@ -107,51 +312,82 @@ const serviceCategories = [
   <section id="servicios" class="py-20 lg:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {serviceCategories.map((category, categoryIndex) => (
-          <div class={`mb-20 observe ${categoryIndex !== serviceCategories.length - 1 ? 'border-b border-gray-100 pb-20' : ''}`}>
+          <div class={`mb-24 ${categoryIndex !== serviceCategories.length - 1 ? 'border-b border-gray-100 pb-24' : ''}`}>
             <!-- Category Header -->
-            <div class="text-center mb-12">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                <i class={`${category.icon} text-white text-3xl`}></i>
+            <div class="text-center mb-16 category-header">
+              <div class={`w-24 h-24 bg-gradient-to-br ${category.color} rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl`}>
+                <i class={`${category.icon} text-white text-4xl`}></i>
               </div>
-              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                {category.name} en Cuenca
+              <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                {category.name}
               </h2>
-              <p class="text-lg text-gray-600 max-w-2xl mx-auto">{category.description}</p>
+              <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">{category.description}</p>
+              <div class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                Disponible en Cuenca, Ecuador
+              </div>
             </div>
 
             <!-- Services Grid -->
-            <div class={`grid gap-6 ${category.services.length === 4 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4' : category.services.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto' : category.services.length === 2 ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' : 'grid-cols-1 max-w-md mx-auto'}`}>
+            <div class={`grid gap-8 ${getGridClasses(category.services.length)}`}>
               {category.services.map((service, serviceIndex) => (
-                  <div class="group bg-gray-50 rounded-3xl p-6 hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary-200 card-hover animate-scale-in" style={`animation-delay: ${serviceIndex * 0.1}s`}>
+                  <div class={`service-card bg-white rounded-3xl p-0 shadow-xl border border-gray-100 overflow-hidden service-card-animate`} style={`animation-delay: ${serviceIndex * 0.15}s`}>
                     <!-- Service Image -->
-                    <div class="w-full h-40 rounded-2xl overflow-hidden mb-6">
-                      <img src={service.image} alt={`${service.name} - Cuenca Ecuador`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="relative w-full h-48 overflow-hidden group">
+                      <img src={service.image} alt={`${service.name} - Cuenca Ecuador`} class="service-image w-full h-full object-cover">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                      <!-- Category Icon -->
+                      <div class={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                        <i class={`${service.icon} text-white text-lg`}></i>
+                      </div>
+
+                      <!-- Price Badge - Opcional y sutil en esquina superior derecha -->
+                      <div class="price-badge absolute top-4 right-4 px-3 py-1 rounded-full group-hover:show-price">
+                        <span class="text-sm font-semibold text-gray-700">${service.price}</span>
+                      </div>
+
+                      <!-- Service Title Overlay -->
+                      <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <h3 class="text-lg font-bold leading-tight">{service.name}</h3>
+                      </div>
                     </div>
 
                     <!-- Service Content -->
-                    <div class="space-y-4">
-                      <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-600 transition-colors leading-tight">
-                        {service.name}
-                      </h3>
-                      <p class="text-gray-600 leading-relaxed text-sm">{service.description}</p>
+                    <div class="p-6 space-y-4">
+                      <div>
+                        <p class="text-gray-600 leading-relaxed text-sm mb-4">{service.description}</p>
 
-                      <!-- Service Details -->
-                      <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200">
-                        <div class="flex items-center text-xs bg-primary-50 text-primary-700 px-2 py-1 rounded-lg">
-                          <i class="fas fa-dollar-sign mr-1"></i>
-                          <span class="font-semibold">${service.price}</span>
-                        </div>
-                        <div class="flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-lg">
-                          <i class="fas fa-clock mr-1"></i>
-                          <span>{service.duration}</span>
+                        <!-- Service Details -->
+                        <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-xl">
+                          <div class="flex items-center text-xs text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>{service.duration}</span>
+                          </div>
+                          <div class={`px-3 py-1 bg-gradient-to-r ${category.color} text-white rounded-full text-xs font-medium shadow-sm`}>
+                            Disponible
+                          </div>
                         </div>
                       </div>
 
-
-                      <a href="/contacto" class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group text-sm mt-3">
-                        Solicitar servicio
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-xs"></i>
-                      </a>
+                      <!-- CTA Buttons -->
+                      <div class="flex gap-3 pt-2">
+                        <button
+                            class={`btn-whatsapp flex-1 bg-gradient-to-r ${category.color} text-white py-3 px-4 rounded-xl font-semibold shadow-lg flex items-center justify-center text-sm whatsapp-btn`}
+                            data-message={service.whatsappText}>
+                          <i class="fab fa-whatsapp mr-2"></i>
+                          Solicitar
+                        </button>
+                        <button
+                            class="info-btn px-4 py-3 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-all duration-300 hover:shadow-md"
+                            data-name={service.name}
+                            data-description={service.description}
+                            data-price={service.price}
+                            data-image={service.image}
+                            data-message={service.whatsappText}>
+                          <i class="fas fa-info-circle"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
               ))}
@@ -161,27 +397,216 @@ const serviceCategories = [
     </div>
   </section>
 
+  <!-- Service Modal -->
+  <div id="service-modal" class="modal-backdrop fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-content bg-white rounded-3xl max-w-lg w-full p-0 transform transition-all duration-300 scale-95 opacity-0 overflow-hidden" id="modal-content">
+      <div class="relative h-56">
+        <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <button id="close-modal" class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+        <div class="absolute bottom-6 left-6 text-white">
+          <h3 id="modal-title" class="text-2xl font-bold mb-2"></h3>
+          <div id="modal-price" class="text-xl font-semibold text-yellow-300"></div>
+        </div>
+      </div>
+
+      <div class="p-8">
+        <p id="modal-description" class="text-gray-600 mb-8 leading-relaxed text-lg"></p>
+
+        <div class="space-y-4">
+          <button
+              id="modal-whatsapp-btn"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl btn-whatsapp">
+            <i class="fab fa-whatsapp mr-3 text-xl"></i>
+            Solicitar por WhatsApp
+          </button>
+          <button
+              id="close-modal-btn"
+              class="w-full border-2 border-gray-200 text-gray-700 py-3 rounded-xl hover:border-gray-300 transition-colors">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+  <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold mb-6">
         ¿Necesitas asesoría contable personalizada?
       </h2>
-      <p class="text-xl text-primary-100 mb-8">
+      <p class="text-xl text-blue-100 mb-10">
         Ofrecemos soluciones de asesoría contable personalizadas para empresas en Cuenca Ecuador.
         Contáctanos y te ayudaremos a encontrar la mejor opción para tu negocio.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contacto" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:scale-105">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="/contacto" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
           <i class="fas fa-envelope mr-3"></i>
-          Solicitar asesoría
+          Solicitar asesoría personalizada
         </a>
-        <button onclick="openWhatsAppModal()" class="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg hover:scale-105">
+        <button id="whatsapp-general" class="btn-whatsapp inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg">
           <i class="fab fa-whatsapp mr-3"></i>
           Chat directo
         </button>
       </div>
     </div>
   </section>
+
+  <script>
+    // Función para enviar mensaje a WhatsApp
+    function sendWhatsAppMessage(message) {
+      try {
+        const phoneNumber = "593987919930";
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        // Abrir en nueva ventana/pestaña sin afectar la página actual
+        const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
+
+        // Verificar si se abrió correctamente
+        if (newWindow && !newWindow.closed) {
+          // Todo bien, la ventana se abrió
+          console.log('WhatsApp abierto correctamente');
+        } else {
+          // Fallback: crear un enlace temporal y hacer clic
+          const link = document.createElement('a');
+          link.href = whatsappUrl;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      } catch (error) {
+        console.error('Error al abrir WhatsApp:', error);
+        // Fallback adicional
+        window.open(`https://wa.me/593987919930`, '_blank');
+      }
+    }
+
+    // Función para abrir modal de servicio
+    function openServiceModal(title, description, price, image, whatsappText) {
+      const modal = document.getElementById('service-modal');
+      const content = document.getElementById('modal-content');
+
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-description').textContent = description;
+      document.getElementById('modal-price').textContent = `$${price}`;
+      document.getElementById('modal-image').src = image;
+
+      // Configurar botón de WhatsApp del modal
+      const modalWhatsappBtn = document.getElementById('modal-whatsapp-btn');
+      modalWhatsappBtn.onclick = () => sendWhatsAppMessage(whatsappText);
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+
+    // Función para cerrar modal
+    function closeServiceModal() {
+      const modal = document.getElementById('service-modal');
+      const content = document.getElementById('modal-content');
+
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    // Event listeners cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+      // Botones de WhatsApp en las tarjetas
+      document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const message = this.dataset.message;
+          if (message) {
+            sendWhatsAppMessage(message);
+          }
+          return false;
+        });
+      });
+
+      // Botones de información
+      document.querySelectorAll('.info-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const name = this.dataset.name;
+          const description = this.dataset.description;
+          const price = this.dataset.price;
+          const image = this.dataset.image;
+          const message = this.dataset.message;
+
+          if (name && description && price && image && message) {
+            openServiceModal(name, description, price, image, message);
+          }
+          return false;
+        });
+      });
+
+      // Cerrar modal
+      document.getElementById('close-modal').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeServiceModal();
+        return false;
+      });
+
+      document.getElementById('close-modal-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeServiceModal();
+        return false;
+      });
+
+      // Cerrar modal al hacer clic fuera
+      document.getElementById('service-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeServiceModal();
+          return false;
+        }
+      });
+
+      // WhatsApp general
+      document.getElementById('whatsapp-general').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        sendWhatsAppMessage('Hola! Me interesa conocer más sobre sus servicios contables. ¿Podrían ayudarme?');
+        return false;
+      });
+
+      // Intersection Observer para animaciones
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+
+      // Observar tarjetas de servicios
+      document.querySelectorAll('.service-card-animate').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    });
+  </script>
 
 </BaseLayout>

@@ -68,7 +68,7 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
 
         /* Scroll personalizado */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -76,12 +76,12 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 3px;
+            background: #5B6FED;
+            border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
+            background: #3D51E8;
         }
 
         /* Animaciones personalizadas adicionales */
@@ -105,18 +105,49 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
 
         /* Gradientes globales */
         .gradient-text {
-            background: linear-gradient(135deg, #0A2463, #7CA5B8);
+            background: linear-gradient(135deg, #5B6FED, #3D51E8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .gradient-primary {
-            background: linear-gradient(135deg, #0A2463, #3385D6);
+            background: linear-gradient(135deg, #5B6FED, #3D51E8);
         }
 
         .gradient-secondary {
-            background: linear-gradient(135deg, #7CA5B8, #B2CFE0);
+            background: linear-gradient(135deg, #6991B9, #557494);
+        }
+
+        /* Botones y elementos con el nuevo diseño */
+        .btn-primary {
+            background: #5B6FED;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #3D51E8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(91, 111, 237, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1f2937;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #5B6FED;
+            color: #5B6FED;
         }
 
         /* Mejoras para focus (accesibilidad) */
@@ -125,8 +156,35 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
         input:focus-visible,
         textarea:focus-visible,
         select:focus-visible {
-            outline: 2px solid #3b82f6;
+            outline: 2px solid #5B6FED;
             outline-offset: 2px;
+        }
+
+        /* Cards style similar a la referencia */
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Section backgrounds */
+        .section-gray {
+            background: #f9fafb;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-primary {
+            background: linear-gradient(135deg, #5B6FED 0%, #3D51E8 100%);
         }
     </style>
 </head>

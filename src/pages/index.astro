@@ -172,51 +172,51 @@ const team = [
 
           <!-- Lista de beneficios -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg">
+            <a href="/servicios" class="flex items-center gap-3 hover:scale-105 transition-transform duration-200 group">
+              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg group-hover:bg-green-500">
                 <i class="fas fa-check text-white text-lg"></i>
               </div>
-              <span class="font-semibold">Declaración IVA</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg">
-                <i class="fas fa-check text-white text-lg"></i>
-              </div>
-              <span class="font-semibold">Retenciones</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg">
-                <i class="fas fa-check text-white text-lg"></i>
-              </div>
-              <span class="font-semibold">Sin Multas</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg">
-                <i class="fas fa-check text-white text-lg"></i>
-              </div>
-              <span class="font-semibold">Rápido y Seguro</span>
-            </div>
-          </div>
-
-          <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <a
-                href="/contacto"
-                class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-primary-600 font-bold rounded-xl transition-all duration-300 shadow-2xl hover:shadow-xl hover:scale-105 group"
-            >
-              <span>Solicitar Ahora</span>
-              <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              <span class="font-semibold group-hover:text-yellow-300 transition-colors">Declaraciones</span>
             </a>
 
+            <a href="/servicios" class="flex items-center gap-3 hover:scale-105 transition-transform duration-200 group">
+              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg group-hover:bg-green-500">
+                <i class="fas fa-check text-white text-lg"></i>
+              </div>
+              <span class="font-semibold group-hover:text-yellow-300 transition-colors">Retenciones básicas</span>
+            </a>
+
+            <a href="/servicios" class="flex items-center gap-3 hover:scale-105 transition-transform duration-200 group">
+              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg group-hover:bg-green-500">
+                <i class="fas fa-check text-white text-lg"></i>
+              </div>
+              <span class="font-semibold group-hover:text-yellow-300 transition-colors">Sin Multas SRI</span>
+            </a>
+
+            <a href="/servicios" class="flex items-center gap-3 hover:scale-105 transition-transform duration-200 group">
+              <div class="flex-shrink-0 w-10 h-10 bg-green-400 rounded-xl flex items-center justify-center shadow-lg group-hover:bg-green-500">
+                <i class="fas fa-check text-white text-lg"></i>
+              </div>
+              <span class="font-semibold group-hover:text-yellow-300 transition-colors">Presentación en línea</span>
+            </a>
+          </div>
+
+          <!-- Nota aclaratoria -->
+          <div class="bg-yellow-400/20 backdrop-blur-sm border border-yellow-300/30 rounded-xl p-3 mt-4">
+            <p class="text-xs text-white font-medium">
+              <i class="fas fa-info-circle"></i> Precio aplica para declaraciones básicas. Declaraciones con mayor complejidad tienen costo adicional según análisis.
+            </p>
+          </div>
+
+          <!-- CTA Principal -->
+          <div class="pt-4">
             <button
                 onclick="sendWhatsApp('Hola! Me interesa el servicio de declaraciones SRI desde $15. ¿Podrían darme más información?')"
-                class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:scale-105"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-5 bg-white hover:bg-gray-100 text-primary-600 font-black text-lg rounded-xl transition-all duration-300 shadow-2xl hover:shadow-xl hover:scale-105 group"
             >
-              <i class="fab fa-whatsapp text-xl"></i>
+              <i class="fab fa-whatsapp text-2xl text-green-500"></i>
               <span>Consultar por WhatsApp</span>
+              <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
           </div>
 
@@ -259,7 +259,7 @@ const team = [
                   <span class="text-4xl font-black text-gray-900 pt-2">$</span>
                   <span class="text-8xl font-black text-primary-600">15</span>
                 </div>
-                <p class="text-xl text-gray-600 font-semibold">por declaración</p>
+                <p class="text-xl text-gray-600 font-semibold">por declaración mínima</p>
               </div>
 
               <!-- Descuento badge -->
@@ -536,6 +536,113 @@ const team = [
     </div>
   </section>
 
+  <!-- Testimonials / Clientes Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-6">
+          NUESTROS CLIENTES
+        </div>
+
+        <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Empresas que Confían en Nosotros
+        </h2>
+
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Hemos trabajado con empresas de diversos sectores, brindando soluciones contables profesionales
+        </p>
+      </div>
+
+      <!-- Logos Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
+
+        <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+          <img
+              src="https://clinicaespana.med.ec/wp-content/uploads/2024/05/logo-vertica-espana_Mesa-de-trabajo-1-1.png"
+              alt="Clínica España"
+              class="w-full h-20 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+          />
+        </div>
+
+        <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-gray-300 group-hover:text-primary-500 transition-colors">+50</div>
+            <p class="text-xs text-gray-500 mt-1">Empresas</p>
+          </div>
+        </div>
+
+        <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <i class="fas fa-building text-4xl text-gray-300 group-hover:text-primary-500 transition-colors"></i>
+            <p class="text-xs text-gray-500 mt-2">Retail</p>
+          </div>
+        </div>
+
+        <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <i class="fas fa-heartbeat text-4xl text-gray-300 group-hover:text-primary-500 transition-colors"></i>
+            <p class="text-xs text-gray-500 mt-2">Salud</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Testimonials -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
+
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Excelente servicio contable. Nos ayudaron con todas nuestras declaraciones SRI y la gestión laboral.
+            Muy profesionales y puntuales."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+              <i class="fas fa-user text-primary-600"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">Clínica España</p>
+              <p class="text-sm text-gray-600">Sector Salud</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Gracias a Contalogic pudimos organizar toda nuestra contabilidad.
+            Su asesoría tributaria nos ahorró problemas con el SRI. 100% recomendados."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+              <i class="fas fa-user text-primary-600"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">Empresa Comercial</p>
+              <p class="text-sm text-gray-600">Sector Retail</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contacto" class="py-16 lg:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -586,45 +693,106 @@ const team = [
               <p class="text-gray-600">Cuenca, Azuay, Ecuador</p>
             </div>
           </div>
+
+          <!-- Banner adicional -->
+          <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fab fa-whatsapp text-3xl"></i>
+              <div>
+                <p class="font-bold text-lg">Respuesta Inmediata</p>
+                <p class="text-sm text-green-100">Te respondemos en minutos</p>
+              </div>
+            </div>
+            <button
+                onclick="sendWhatsApp('Hola! Me interesa obtener información sobre sus servicios contables.')"
+                class="w-full bg-white text-green-600 font-bold py-3 rounded-lg hover:bg-green-50 transition-colors mt-2"
+            >
+              Chatear Ahora
+            </button>
+          </div>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Contact Form Mejorado -->
         <div class="bg-white rounded-2xl shadow-xl p-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6">Solicita tu Consulta</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Solicita tu Cotización</h3>
+          <p class="text-sm text-gray-600 mb-6">Completa el formulario y te contactaremos por WhatsApp</p>
 
-          <form class="space-y-6" id="contact-form">
+          <form class="space-y-5" id="contact-form">
             <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                Nombre de la Empresa o Persona *
+              </label>
               <input
                   type="text"
                   id="name"
                   name="name"
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                  placeholder="Tu nombre completo"
+                  placeholder="Ej: Mi Empresa S.A."
               />
             </div>
 
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+              <label for="ruc" class="block text-sm font-medium text-gray-700 mb-2">
+                RUC (13 dígitos, debe terminar en 001) *
+              </label>
               <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="ruc"
+                  name="ruc"
+                  required
+                  maxlength="13"
+                  pattern="[0-9]{10}001"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all font-mono"
+                  placeholder="1234567890001"
+              />
+              <p class="text-xs text-gray-500 mt-1">
+                <i class="fas fa-info-circle"></i> Debe ser un RUC válido de 13 dígitos terminado en 001
+              </p>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                Teléfono / WhatsApp *
+              </label>
+              <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                  placeholder="tu@email.com"
+                  placeholder="0987654321"
               />
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+              <label for="service" class="block text-sm font-medium text-gray-700 mb-2">
+                Servicio de Interés *
+              </label>
+              <select
+                  id="service"
+                  name="service"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="Declaraciones SRI ($15)">Declaraciones SRI ($15)</option>
+                <option value="Asesoría Tributaria Completa">Asesoría Tributaria Completa</option>
+                <option value="Gestión Laboral IESS">Gestión Laboral IESS</option>
+                <option value="Contabilidad Integral">Contabilidad Integral</option>
+                <option value="Todos los servicios">Todos los servicios</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                Mensaje (Opcional)
+              </label>
               <textarea
                   id="message"
                   name="message"
-                  rows="4"
-                  required
-                  placeholder="¿En qué podemos ayudarte?"
+                  rows="3"
+                  placeholder="Cuéntanos más sobre tus necesidades..."
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
               ></textarea>
             </div>
@@ -633,9 +801,13 @@ const team = [
                 type="submit"
                 class="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <i class="fas fa-paper-plane"></i>
-              <span>Enviar Mensaje</span>
+              <i class="fab fa-whatsapp text-xl"></i>
+              <span>Enviar por WhatsApp</span>
             </button>
+
+            <p class="text-xs text-center text-gray-500">
+              Al enviar, serás redirigido a WhatsApp para completar tu consulta
+            </p>
           </form>
         </div>
 
@@ -646,25 +818,77 @@ const team = [
 </BaseLayout>
 
 <script>
-  // Handle contact form submission
+  // Validación y envío del formulario mejorado
   document.getElementById('contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const formData = new FormData(e.target as HTMLFormElement);
     const name = formData.get('name');
-    const email = formData.get('email');
+    const ruc = formData.get('ruc');
+    const phone = formData.get('phone');
+    const service = formData.get('service');
     const message = formData.get('message');
 
-    // Create WhatsApp message
-    const whatsappMessage = `Hola! Soy ${name}. ${message} Mi email es: ${email}`;
+    // Validar RUC
+    const rucStr = ruc?.toString() || '';
+    if (rucStr.length !== 13) {
+      alert('❌ El RUC debe tener exactamente 13 dígitos');
+      return;
+    }
 
-    // Send via WhatsApp
+    if (!rucStr.endsWith('001')) {
+      alert('❌ El RUC debe terminar en 001');
+      return;
+    }
+
+    // Validar que sea solo números
+    if (!/^\d+$/.test(rucStr)) {
+      alert('❌ El RUC debe contener solo números');
+      return;
+    }
+
+    // Crear mensaje formateado para WhatsApp
+    let whatsappMessage = `🏢 *NUEVA SOLICITUD DE COTIZACIÓN*\n\n`;
+    whatsappMessage += `👤 *Empresa/Persona:* ${name}\n`;
+    whatsappMessage += `📋 *RUC:* ${rucStr}\n`;
+    whatsappMessage += `📱 *Teléfono:* ${phone}\n`;
+    whatsappMessage += `💼 *Servicio:* ${service}\n`;
+
+    if (message) {
+      whatsappMessage += `\n📝 *Mensaje adicional:*\n${message}\n`;
+    }
+
+    whatsappMessage += `\n✅ Formulario enviado desde contalogic.com`;
+
+    // Enviar por WhatsApp
     (window as any).sendWhatsApp(whatsappMessage);
 
-    // Reset form
+    // Resetear formulario
     (e.target as HTMLFormElement).reset();
 
-    // Show success message
-    alert('Mensaje enviado! Te contactaremos pronto por WhatsApp.');
+    // Mostrar confirmación
+    alert('✅ ¡Formulario validado! Serás redirigido a WhatsApp para completar tu consulta.');
+  });
+
+  // Validación en tiempo real del RUC
+  document.getElementById('ruc')?.addEventListener('input', function(e) {
+    const input = e.target as HTMLInputElement;
+    const value = input.value;
+
+    // Solo permitir números
+    input.value = value.replace(/\D/g, '');
+
+    // Validación visual
+    if (input.value.length === 13) {
+      if (input.value.endsWith('001')) {
+        input.classList.remove('border-red-300');
+        input.classList.add('border-green-500');
+      } else {
+        input.classList.remove('border-green-500');
+        input.classList.add('border-red-300');
+      }
+    } else {
+      input.classList.remove('border-green-500', 'border-red-300');
+    }
   });
 </script>

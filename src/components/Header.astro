@@ -5,11 +5,11 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/sobre-mi', label: 'About Us' },
-  { href: '/servicios', label: 'Our Services' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '/contacto', label: 'Contact Us' }
+  { href: '/', label: 'Inicio' },
+  { href: '/sobre-mi', label: 'Nosotros' },
+  { href: '/servicios', label: 'Servicios' },
+  { href: '#testimonials', label: 'Clientes' },
+  { href: '/contacto', label: 'Contacto' }
 ];
 
 const isActive = (href: string) => {
@@ -52,7 +52,7 @@ const isActive = (href: string) => {
             href="/contacto"
             class="flex items-center gap-2 px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm"
         >
-          <span>Request a Quote</span>
+          <span>Solicitar Cotización</span>
         </a>
       </div>
 
@@ -115,7 +115,7 @@ const isActive = (href: string) => {
             href="/contacto"
             class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-colors duration-200"
         >
-          Request a Quote
+          Solicitar Cotización
         </a>
 
         <button

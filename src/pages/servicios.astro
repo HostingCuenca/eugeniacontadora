@@ -3,160 +3,301 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const serviceCategories = [
   {
-    name: 'Asesoría Tributaria',
+    name: 'Asesoría Tributaria SRI',
     icon: 'fas fa-file-invoice-dollar',
-    description: 'Gestión completa de obligaciones tributarias para personas naturales y jurídicas en Ecuador',
+    description: 'Gestión completa de obligaciones tributarias ante el SRI para personas naturales y jurídicas en Ecuador',
     color: 'from-blue-500 to-blue-600',
     services: [
       {
-        name: 'Declaraciones de Impuesto a la Renta',
-        description: 'Elaboración y presentación de declaraciones anuales de IR',
+        name: 'Declaraciones de Impuesto a la Renta (IR)',
+        description: 'Cálculo y presentación anual del impuesto que grava los ingresos de personas naturales y sociedades.',
         price: 45,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-file-alt',
+        duration: 'Anual',
+        icon: 'fas fa-file-invoice',
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Declaraciones de Impuesto a la Renta ($45). ¿Podrían darme más información?'
+        whatsappText: 'Hola! Me interesa el servicio de Declaraciones de Impuesto a la Renta. ¿Podrían darme más información?'
       },
       {
         name: 'Declaraciones de IVA',
-        description: 'Declaraciones mensuales de IVA para contribuyentes',
-        price: 25,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-receipt',
-        image: 'https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Declaraciones de IVA ($25). ¿Podrían darme más información?'
+        description: 'Cálculo y presentación mensual o semestral del Impuesto al Valor Agregado.',
+        price: 15,
+        duration: 'Mensual/Semestral',
+        icon: 'fas fa-percentage',
+        image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Declaraciones de IVA. ¿Podrían darme más información?'
       },
       {
-        name: 'Retenciones en la Fuente',
-        description: 'Cálculo y declaración de retenciones IR',
+        name: 'Declaración de Retenciones En la Fuente IR',
+        description: 'Reporte mensual de las retenciones del Impuesto a la Renta efectuadas.',
         price: 20,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-calculator',
+        duration: 'Mensual',
+        icon: 'fas fa-hand-holding-usd',
         image: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Retenciones en la Fuente ($20). ¿Podrían darme más información?'
+        whatsappText: 'Hola! Me interesa el servicio de Declaración de Retenciones en la Fuente. ¿Podrían darme más información?'
       },
       {
-        name: 'Consultoría Tributaria',
-        description: 'Asesoría en planificación y optimización tributaria',
-        price: 60,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-chart-pie',
+        name: 'Declaración Patrimonial',
+        description: 'Presentación obligatoria para personas naturales que superan un monto específico de patrimonio.',
+        price: 80,
+        duration: 'Anual',
+        icon: 'fas fa-landmark',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Declaración Patrimonial. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Anexo de Gastos Personales',
+        description: 'Reporte y proyección de gastos deducibles (vivienda, salud, alimentación, etc.) para la reducción del IR personal.',
+        price: 25,
+        duration: 'Anual',
+        icon: 'fas fa-receipt',
+        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Anexo de Gastos Personales. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Anexo Transaccional (ATS)',
+        description: 'Reporte mensual o semestral de todas las transacciones de compras y ventas.',
+        price: 30,
+        duration: 'Mensual/Semestral',
+        icon: 'fas fa-exchange-alt',
         image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Consultoría Tributaria ($60). ¿Podrían darme más información?'
+        whatsappText: 'Hola! Me interesa el servicio de Anexo Transaccional (ATS). ¿Podrían darme más información?'
+      },
+      {
+        name: 'Anexo REDEP / Dividendo / REBEFICS',
+        description: 'Reportes especializados para retenciones a dependientes, dividendos y beneficiarios efectivos.',
+        price: 50,
+        duration: 'Según requerimiento',
+        icon: 'fas fa-file-contract',
+        image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Anexos REDEP/Dividendo/REBEFICS. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Devolución de IR / IVA Adultos Mayores',
+        description: 'Solicitud formal al SRI para recuperar el Impuesto a la Renta pagado en exceso o el IVA pagado por adultos mayores.',
+        price: 60,
+        duration: 'Por solicitud',
+        icon: 'fas fa-undo-alt',
+        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Devolución de IR/IVA para Adultos Mayores. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Informe de Cumplimiento Tributario (ICT)',
+        description: 'Emisión de reporte de auditoría sobre el cumplimiento de obligaciones tributarias (para grandes contribuyentes).',
+        price: 300,
+        duration: 'Anual',
+        icon: 'fas fa-clipboard-check',
+        image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Informe de Cumplimiento Tributario (ICT). ¿Podrían darme más información?'
+      },
+      {
+        name: 'Proyección de Gastos',
+        description: 'Estimación anual de gastos personales para cálculo de retenciones del Impuesto a la Renta.',
+        price: 35,
+        duration: 'Anual',
+        icon: 'fas fa-chart-line',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Proyección de Gastos. ¿Podrían darme más información?'
       }
     ]
   },
   {
-    name: 'Gestión Laboral',
+    name: 'Gestión Laboral IESS',
     icon: 'fas fa-users',
-    description: 'Administración integral de recursos humanos y nómina empresarial',
+    description: 'Administración integral de recursos humanos, nómina y seguridad social empresarial',
     color: 'from-green-500 to-green-600',
     services: [
       {
-        name: 'Roles de Pago',
-        description: 'Elaboración de roles de pago mensuales precisos',
+        name: 'Roles de Pago (Nómina)',
+        description: 'Elaboración mensual de nóminas, incluyendo remuneración, descuentos y aportes al IESS.',
         price: 35,
-        duration: 'Tiempo referencial',
+        duration: 'Mensual',
         icon: 'fas fa-money-check-alt',
-        image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Roles de Pago ($35). ¿Podrían darme más información?'
+        image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Roles de Pago (Nómina). ¿Podrían darme más información?'
       },
       {
-        name: 'Avisos IESS',
-        description: 'Gestión de avisos de entrada y salida IESS',
+        name: 'Aviso de Entrada / Avisos de Salida (IESS)',
+        description: 'Registro obligatorio ante el IESS de la afiliación o desvinculación de un empleado.',
         price: 15,
-        duration: 'Tiempo referencial',
+        duration: 'Por evento',
         icon: 'fas fa-user-plus',
         image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Avisos IESS ($15). ¿Podrían darme más información?'
+        whatsappText: 'Hola! Me interesa el servicio de Avisos IESS (Entrada/Salida). ¿Podrían darme más información?'
       },
       {
-        name: 'Préstamos IESS',
-        description: 'Asesoría para préstamos hipotecarios y quirografarios',
-        price: 65,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-hand-holding-usd',
+        name: 'Contratos / Actas de Finiquito',
+        description: 'Asistencia en la elaboración y registro de contratos y liquidación final de valores al término de la relación laboral (Ministerio del Trabajo).',
+        price: 40,
+        duration: 'Por documento',
+        icon: 'fas fa-file-signature',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Contratos/Actas de Finiquito. ¿Podrían darme más información?'
+      },
+      {
+        name: 'XIII Sueldo / XIV Sueldo / Utilidades',
+        description: 'Cálculo, registro y pago de las remuneraciones y beneficios sociales adicionales obligatorios.',
+        price: 30,
+        duration: 'Semestral/Anual',
+        icon: 'fas fa-gift',
+        image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de cálculo de Décimos y Utilidades. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Préstamos Hipotecarios / Quirografarios (IESS)',
+        description: 'Asesoría y gestión para acceder a créditos del Banco del IESS (BIESS).',
+        price: 80,
+        duration: 'Por solicitud',
+        icon: 'fas fa-home',
         image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Préstamos IESS ($65). ¿Podrían darme más información?'
+        whatsappText: 'Hola! Me interesa el servicio de asesoría para Préstamos IESS. ¿Podrían darme más información?'
       }
     ]
   },
   {
-    name: 'Estados Financieros',
+    name: 'Estados Financieros y Reportes',
     icon: 'fas fa-chart-line',
-    description: 'Elaboración de estados financieros bajo NIIF y análisis empresarial',
+    description: 'Elaboración de estados financieros bajo NIIF y documentación societaria para la Superintendencia de Compañías',
     color: 'from-orange-500 to-orange-600',
     services: [
       {
-        name: 'Estados Financieros NIIF',
-        description: 'Elaboración completa de EEFF bajo NIIF',
-        price: 200,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-file-contract',
+        name: 'Estados Financieros Bajo NIIF',
+        description: 'Elaboración del conjunto completo de estados financieros bajo Normas Internacionales de Información Financiera para garantizar transparencia y comparabilidad.',
+        price: 250,
+        duration: 'Anual',
+        icon: 'fas fa-file-invoice-dollar',
         image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Estados Financieros NIIF ($200). ¿Podrían darme más información?'
+        whatsappText: 'Hola! Me interesa el servicio de Estados Financieros bajo NIIF. ¿Podrían darme más información?'
       },
       {
-        name: 'Análisis Financiero',
-        description: 'Interpretación y análisis de ratios financieros',
+        name: 'Elaboración Estado de Pérdidas y Ganancias',
+        description: 'Documento que muestra el desempeño financiero (ingresos y gastos) para determinar la utilidad o pérdida.',
         price: 120,
-        duration: 'Tiempo referencial',
+        duration: 'Mensual/Anual',
         icon: 'fas fa-chart-bar',
-        image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Análisis Financiero ($120). ¿Podrían darme más información?'
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Estado de Pérdidas y Ganancias. ¿Podrían darme más información?'
       },
       {
-        name: 'Balance General',
-        description: 'Elaboración del balance general empresarial',
-        price: 90,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-balance-scale',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Balance General ($90). ¿Podrían darme más información?'
+        name: 'Estado de Flujos de Efectivo / Cambios en el Patrimonio',
+        description: 'Reportes que detallan el movimiento del efectivo y las variaciones en las cuentas de patrimonio.',
+        price: 100,
+        duration: 'Anual',
+        icon: 'fas fa-exchange-alt',
+        image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Estado de Flujos de Efectivo. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Notas Explicativas',
+        description: 'Información adicional que acompaña a los estados financieros para detallar políticas contables y desglosar saldos.',
+        price: 80,
+        duration: 'Anual',
+        icon: 'fas fa-sticky-note',
+        image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Notas Explicativas. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Actas de Junta / Informes de Gerencia / Comisario',
+        description: 'Elaboración, registro y presentación de la documentación legal obligatoria ante la Superintendencia de Compañías.',
+        price: 150,
+        duration: 'Anual',
+        icon: 'fas fa-book',
+        image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Actas e Informes para Superintendencia de Compañías. ¿Podrían darme más información?'
       }
     ]
   },
   {
-    name: 'Software y Digitalización',
-    icon: 'fas fa-laptop-code',
-    description: 'Implementación y manejo de sistemas contables digitales',
-    color: 'from-indigo-500 to-indigo-600',
+    name: 'Otros Trámites y Gestiones',
+    icon: 'fas fa-tasks',
+    description: 'Servicios adicionales para la gestión administrativa y operativa de tu negocio',
+    color: 'from-purple-500 to-purple-600',
     services: [
       {
-        name: 'Implementación Software Contable',
-        description: 'Instalación y configuración de sistemas contables',
-        price: 150,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-cogs',
-        image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Implementación de Software Contable ($150). ¿Podrían darme más información?'
+        name: 'Solicitud de Documentos Electrónicos / Preimpresos',
+        description: 'Gestiones ante el SRI para la autorización y uso de comprobantes de venta.',
+        price: 25,
+        duration: 'Por solicitud',
+        icon: 'fas fa-file-invoice',
+        image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Solicitud de Documentos Electrónicos. ¿Podrían darme más información?'
       },
       {
-        name: 'Capacitación Digital',
-        description: 'Entrenamiento en uso de software contable',
+        name: 'Solicitud Firma Electrónica',
+        description: 'Trámite para obtener el certificado digital para la firma de documentos y declaraciones en línea.',
         price: 80,
-        duration: 'Tiempo referencial',
-        icon: 'fas fa-graduation-cap',
-        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80',
-        whatsappText: 'Hola! Me interesa el servicio de Capacitación Digital ($80). ¿Podrían darme más información?'
+        duration: 'Por solicitud',
+        icon: 'fas fa-signature',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Firma Electrónica. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Toma física de Inventarios y Activos Fijos',
+        description: 'Conteo y verificación física de existencias y bienes de larga duración para cotejar con registros contables.',
+        price: 180,
+        duration: 'Por evento',
+        icon: 'fas fa-boxes',
+        image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Toma física de Inventarios. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Apertura de RUC',
+        description: 'Trámites para la obtención del Registro Único de Contribuyentes ante el SRI.',
+        price: 40,
+        duration: 'Por solicitud',
+        icon: 'fas fa-id-card',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Apertura de RUC. ¿Podrían darme más información?'
+      },
+      {
+        name: 'Sistema de Facturación',
+        description: 'Asesoría o implementación de un sistema para la emisión de comprobantes de venta electrónicos.',
+        price: 120,
+        duration: 'Por implementación',
+        icon: 'fas fa-laptop-code',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
+        whatsappText: 'Hola! Me interesa el servicio de Sistema de Facturación. ¿Podrían darme más información?'
       }
     ]
   }
 ];
 
 function getGridClasses(servicesCount) {
-  if (servicesCount === 1) return "grid-cols-1 max-w-md mx-auto";
-  if (servicesCount === 2) return "grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto";
-  if (servicesCount === 3) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto";
-  if (servicesCount === 4) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-4";
-  if (servicesCount === 5) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5";
-  return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+  // Siempre usar grid de 4 columnas en desktop
+  return "grid-cols-1 md:grid-cols-2 lg:grid-cols-4";
+}
+
+function getCardSpanClass(servicesCount, index) {
+  // Si el número de servicios no es divisible por 4, los últimos elementos se extienden
+  const remainder = servicesCount % 4;
+
+  if (remainder === 0) return ""; // Grid completo, sin extensión
+
+  // Calcular si este elemento está en la última fila incompleta
+  const isInLastRow = index >= servicesCount - remainder;
+
+  if (!isInLastRow) return "";
+
+  // Extender elementos de la última fila
+  if (remainder === 1) {
+    return "lg:col-span-4"; // 1 elemento ocupa las 4 columnas
+  } else if (remainder === 2) {
+    return "lg:col-span-2"; // 2 elementos ocupan 2 columnas cada uno
+  } else if (remainder === 3) {
+    // 3 elementos: calcular cuál debe extenderse
+    const positionInRow = index - (servicesCount - remainder);
+    if (positionInRow === 1) {
+      return "lg:col-span-2"; // El del medio ocupa 2 columnas
+    }
+    return ""; // Los de los extremos ocupan 1 columna
+  }
+
+  return "";
 }
 ---
 
 <BaseLayout
-    title="Mejores Servicios Contables en Cuenca Ecuador | Asesoría Tributaria Profesional"
-    description="Servicios contables profesionales en Cuenca Ecuador. Asesoría tributaria, gestión laboral, estados financieros, trámites SRI. Contadora CPA certificada."
+    title="Servicios Contables Profesionales en Cuenca Ecuador | Contalogic"
+    description="Servicios contables profesionales en Cuenca Ecuador. Asesoría tributaria SRI, gestión laboral IESS, estados financieros NIIF, y más. Contadora profesional certificada."
 >
 
   <style>
@@ -271,11 +412,11 @@ function getGridClasses(servicesCount) {
           Servicios <span class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">contables</span> especializados
         </h1>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-          Descubre nuestra amplia gama de servicios de asesoría contable y tributaria
+          Descubre mi amplia gama de servicios de asesoría contable y tributaria
           diseñados específicamente para empresas en Cuenca Ecuador.
         </p>
         <a href="#servicios" class="inline-flex items-center px-8 py-4 btn-primary text-white font-semibold rounded-2xl shadow-lg">
-          Explorar asesorías
+          Explorar servicios
           <i class="fas fa-arrow-down ml-3"></i>
         </a>
       </div>
@@ -304,8 +445,74 @@ function getGridClasses(servicesCount) {
 
             <!-- Services Grid -->
             <div class={`grid gap-8 ${getGridClasses(category.services.length)}`}>
-              {category.services.map((service, serviceIndex) => (
-                  <div class={`service-card bg-white rounded-3xl p-0 shadow-xl border border-gray-100 overflow-hidden service-card-animate`} style={`animation-delay: ${serviceIndex * 0.15}s`}>
+              {category.services.map((service, serviceIndex) => {
+                const spanClass = getCardSpanClass(category.services.length, serviceIndex);
+                const isWideCard = spanClass.includes('col-span-4');
+
+                return isWideCard ? (
+                  // Diseño horizontal para tarjetas anchas
+                  <div class={`service-card bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden service-card-animate ${spanClass}`} style={`animation-delay: ${serviceIndex * 0.15}s`}>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 h-full">
+                      <!-- Service Image -->
+                      <div class="relative h-64 lg:h-full overflow-hidden group">
+                        <img src={service.image} alt={`${service.name} - Cuenca Ecuador`} class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+
+                        <!-- Category Icon -->
+                        <div class={`absolute top-4 left-4 w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                          <i class={`${service.icon} text-white text-2xl`}></i>
+                        </div>
+                      </div>
+
+                      <!-- Service Content - Diseño expandido -->
+                      <div class="p-8 lg:p-10 flex flex-col justify-center space-y-6">
+                        <div>
+                          <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{service.name}</h3>
+                          <p class="text-gray-600 leading-relaxed text-base lg:text-lg mb-6">{service.description}</p>
+                        </div>
+
+                        <!-- Service Details -->
+                        <div class="flex flex-wrap items-center gap-4">
+                          <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-2 text-lg"></i>
+                            <span class="font-medium">{service.duration}</span>
+                          </div>
+                          <div class={`px-4 py-2 bg-gradient-to-r ${category.color} text-white rounded-full text-sm font-semibold shadow-md`}>
+                            Disponible ahora
+                          </div>
+                        </div>
+
+                        <!-- CTA Buttons - Más prominentes -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                          <button
+                              class={`btn-whatsapp flex-1 bg-gradient-to-r ${category.color} text-white py-4 px-6 rounded-xl font-bold shadow-lg flex items-center justify-center text-base whatsapp-btn`}
+                              data-message={service.whatsappText}>
+                            <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                            Solicitar este servicio
+                          </button>
+                          <button
+                              class="info-btn px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-blue-400 hover:text-blue-600 transition-all duration-300 hover:shadow-lg font-semibold"
+                              data-name={service.name}
+                              data-description={service.description}
+                              data-price={service.price}
+                              data-image={service.image}
+                              data-message={service.whatsappText}>
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Más detalles
+                          </button>
+                        </div>
+
+                        <!-- Características adicionales -->
+                        <div class="flex items-center gap-2 text-sm text-gray-500 pt-2 border-t border-gray-100">
+                          <i class="fas fa-shield-check text-green-500"></i>
+                          <span>Servicio profesional garantizado</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  // Diseño vertical estándar para tarjetas normales
+                  <div class={`service-card bg-white rounded-3xl p-0 shadow-xl border border-gray-100 overflow-hidden service-card-animate ${spanClass}`} style={`animation-delay: ${serviceIndex * 0.15}s`}>
                     <!-- Service Image -->
                     <div class="relative w-full h-48 overflow-hidden group">
                       <img src={service.image} alt={`${service.name} - Cuenca Ecuador`} class="service-image w-full h-full object-cover">
@@ -314,11 +521,6 @@ function getGridClasses(servicesCount) {
                       <!-- Category Icon -->
                       <div class={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center shadow-lg`}>
                         <i class={`${service.icon} text-white text-lg`}></i>
-                      </div>
-
-                      <!-- Price Badge - Opcional y sutil en esquina superior derecha -->
-                      <div class="price-badge absolute top-4 right-4 px-3 py-1 rounded-full group-hover:show-price">
-                        <span class="text-sm font-semibold text-gray-700">${service.price}</span>
                       </div>
 
                       <!-- Service Title Overlay -->
@@ -364,7 +566,8 @@ function getGridClasses(servicesCount) {
                       </div>
                     </div>
                   </div>
-              ))}
+                );
+              })}
             </div>
           </div>
       ))}
@@ -382,7 +585,6 @@ function getGridClasses(servicesCount) {
         </button>
         <div class="absolute bottom-6 left-6 text-white">
           <h3 id="modal-title" class="text-2xl font-bold mb-2"></h3>
-          <div id="modal-price" class="text-xl font-semibold text-yellow-300"></div>
         </div>
       </div>
 
@@ -413,8 +615,8 @@ function getGridClasses(servicesCount) {
         ¿Necesitas asesoría contable personalizada?
       </h2>
       <p class="text-xl text-blue-100 mb-10">
-        Ofrecemos soluciones de asesoría contable personalizadas para empresas en Cuenca Ecuador.
-        Contáctanos y te ayudaremos a encontrar la mejor opción para tu negocio.
+        Ofrezco soluciones de asesoría contable personalizadas para empresas en Cuenca Ecuador.
+        Contáctame y te ayudaré a encontrar la mejor opción para tu negocio.
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <a href="/contacto" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -468,7 +670,6 @@ function getGridClasses(servicesCount) {
 
       document.getElementById('modal-title').textContent = title;
       document.getElementById('modal-description').textContent = description;
-      document.getElementById('modal-price').textContent = `$${price}`;
       document.getElementById('modal-image').src = image;
 
       // Configurar botón de WhatsApp del modal
@@ -557,7 +758,7 @@ function getGridClasses(servicesCount) {
       document.getElementById('whatsapp-general').addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        sendWhatsAppMessage('Hola! Me interesa conocer más sobre sus servicios contables. ¿Podrían ayudarme?');
+        sendWhatsAppMessage('Hola! Me interesa conocer más sobre tus servicios contables. ¿Podrías ayudarme?');
         return false;
       });
 

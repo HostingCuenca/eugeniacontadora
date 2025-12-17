@@ -1,0 +1,18 @@
+# robots.txt para Contalogic
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.contalogic.com/sitemap.xml
+
+# Bloquear archivos innecesarios
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Permitir indexación de imágenes y favicons
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.webp$

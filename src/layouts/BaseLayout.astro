@@ -22,6 +22,9 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
     <meta name="author" content="Eugenia Guerrero CPA" />
     <meta name="robots" content="index, follow" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
@@ -41,18 +44,18 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
     <meta name="twitter:image" content={new URL('/favicon-512x512.png', Astro.url)} />
 
     <!-- Favicon - Múltiples tamaños para todos los dispositivos -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href={new URL('/favicon.png', Astro.site)} />
+    <link rel="icon" type="image/png" sizes="32x32" href={new URL('/favicon.png', Astro.site)} />
+    <link rel="icon" type="image/png" sizes="192x192" href={new URL('/favicon-192x192.png', Astro.site)} />
+    <link rel="icon" type="image/png" sizes="512x512" href={new URL('/favicon-512x512.png', Astro.site)} />
+    <link rel="shortcut icon" href={new URL('/favicon.png', Astro.site)} />
 
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href={new URL('/apple-touch-icon.png', Astro.site)} />
+    <link rel="apple-touch-icon" sizes="180x180" href={new URL('/apple-touch-icon.png', Astro.site)} />
 
     <!-- PWA / Android -->
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href={new URL('/site.webmanifest', Astro.site)} />
     <meta name="theme-color" content="#5B6FED" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,8 +64,8 @@ const { title, description, keywords = "contadora cuenca, servicios contables ec
 
     <!-- Microsoft Tiles -->
     <meta name="msapplication-TileColor" content="#5B6FED" />
-    <meta name="msapplication-TileImage" content="/favicon-192x192.png" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileImage" content={new URL('/favicon-192x192.png', Astro.site)} />
+    <meta name="msapplication-config" content={new URL('/browserconfig.xml', Astro.site)} />
 
     <!-- Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

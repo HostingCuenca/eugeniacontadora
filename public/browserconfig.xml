@@ -2,8 +2,8 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/favicon-192x192.png"/>
-            <square310x310logo src="/favicon-512x512.png"/>
+            <square150x150logo src="https://contalogic.app/favicon-192x192.png"/>
+            <square310x310logo src="https://contalogic.app/favicon-512x512.png"/>
             <TileColor>#5B6FED</TileColor>
         </tile>
     </msapplication>
